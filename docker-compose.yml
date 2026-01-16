@@ -1,0 +1,27 @@
+services:
+  # Servicio del Backend (Java)
+  backend:
+    build: ./backend
+    container_name: boda-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_USER=ADMIN
+      # Las contraseñas reales las pondremos en un archivo .env en el servidor
+      # Por ahora, placeholders
+      - DB_PASSWORD=${DB_PASSWORD}
+      - TNS_ADMIN=/app/wallet
+    volumes:
+      # Aquí conectaremos la Wallet real del servidor al contenedor
+      - ./wallet_auth:/app/wallet
+    restart: always
+
+  # Servicio del Frontend (React)
+  frontend:
+    build: ./client
+    container_name: boda-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always

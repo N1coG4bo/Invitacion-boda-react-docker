@@ -1,0 +1,10 @@
+# Archivos de sistema y Java
+target/
+*.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Archivos de entorno y Secretos (VITAL)
+.env
+wallet/
+wallet_auth/
+**/Wallet_*.zip
