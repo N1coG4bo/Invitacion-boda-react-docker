@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+  --font-script: "Great Vibes", cursive;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Paleta de colores: Jardín Romántico */
+  /* Amarillo Mostaza (Girasoles): oklch(0.85 0.18 85) */
+  /* Lavanda Suave: oklch(0.88 0.08 300) */
+  /* Verde Salvia: oklch(0.85 0.08 140) */
+  /* Blanco Crema: oklch(0.98 0.01 90) */
+  /* Gris Carbón: oklch(0.35 0.02 80) */
+
+  /* Color primario: Usado en detalles importantes como la fecha, y fondos de secciones. */
+  --primary: oklch(0.85 0.18 85); /* Amarillo Girasol */
+  /* Texto para usar sobre el color primario. */
+  --primary-foreground: oklch(0.35 0.02 80); /* Texto oscuro sobre amarillo */
+  
+  /* Color secundario: Una alternativa para acentos. */
+  --secondary: oklch(0.88 0.08 300); /* Lavanda */
+  /* Texto para usar sobre el color secundario. */
+  --secondary-foreground: oklch(0.35 0.02 80);
+
+  /* Color de acento: Otro color para resaltar elementos. */
+  --accent: oklch(0.85 0.08 140); /* Verde Salvia */
+  /* Texto para usar sobre el color de acento. */
+  --accent-foreground: oklch(0.98 0.01 90);
+
+  /* Color de fondo principal de toda la página. */
+  --background: oklch(96.264% 0.0254 313.798); /* Blanco Crema */
+  /* Color de texto principal para la mayoría del contenido. */
+  --foreground: oklch(0.35 0.02 80); /* Gris Carbón */
+
+  /* Fondo para elementos tipo "tarjeta", como la de información de regalo. */
+  --card: oklch(1 0 0);
+  /* Texto para usar sobre las tarjetas. */
+  --card-foreground: oklch(0.35 0.02 80);
+
+  /* Fondo para elementos emergentes (popovers). */
+  --popover: oklch(1 0 0);
+  /* Texto para usar sobre popovers. */
+  --popover-foreground: oklch(0.35 0.02 80);
+
+  /* Color para textos o elementos de baja importancia. */
+  --muted: oklch(0.96 0.01 90);
+  /* Texto para elementos silenciados (ej. subtítulos, textos de ayuda). */
+  --muted-foreground: oklch(0.55 0.02 80);
+
+  /* Color para acciones destructivas (ej. botones de eliminar). */
+  --destructive: oklch(0.577 0.245 27.325);
+  /* Texto para usar sobre elementos destructivos. */
+  --destructive-foreground: oklch(0.985 0 0);
+
+  /* Color para bordes en general. */
+  --border: oklch(0.92 0.01 90);
+  /* Fondo para campos de formulario (inputs). */
+  --input: oklch(0.92 0.01 90);
+  /* Color del anillo de enfoque que aparece al seleccionar un elemento interactivo. */
+  --ring: oklch(0.85 0.18 85);
+
+  /* Radio de borde para los elementos. */
+  --radius: 0.75rem;
+
+  /* Colores específicos para la barra lateral (si la hubiera). */
+  --sidebar: oklch(0.98 0.01 90);
+  --sidebar-foreground: oklch(0.35 0.02 80);
+  --sidebar-primary: oklch(0.85 0.18 85);
+  --sidebar-primary-foreground: oklch(0.35 0.02 80);
+  --sidebar-accent: oklch(0.88 0.08 300);
+  --sidebar-accent-foreground: oklch(0.35 0.02 80);
+  --sidebar-border: oklch(0.92 0.01 90);
+  --sidebar-ring: oklch(0.85 0.18 85);
+}
+
+.dark {
+  /* Modo oscuro: Paleta de colores para el modo oscuro. */
+  /* Color de fondo principal para el modo oscuro. */
+  --background: oklch(0.20 0.02 80);
+  /* Color de texto principal para el modo oscuro. */
+  --foreground: oklch(0.98 0.01 90);
+  /* Fondo para tarjetas en modo oscuro. */
+  --card: oklch(0.25 0.02 80);
+  /* Texto para tarjetas en modo oscuro. */
+  --card-foreground: oklch(0.98 0.01 90);
+  /* Fondo para popovers en modo oscuro. */
+  --popover: oklch(0.25 0.02 80);
+  /* Texto para popovers en modo oscuro. */
+  --popover-foreground: oklch(0.98 0.01 90);
+  /* Color primario (se mantiene brillante para contraste). */
+  --primary: oklch(0.85 0.18 85);
+  /* Texto sobre el color primario en modo oscuro. */
+  --primary-foreground: oklch(0.20 0.02 80);
+  /* Color secundario en modo oscuro. */
+  --secondary: oklch(0.40 0.08 300);
+  /* Texto sobre el color secundario en modo oscuro. */
+  --secondary-foreground: oklch(0.98 0.01 90);
+  /* Color para elementos silenciados en modo oscuro. */
+  --muted: oklch(0.30 0.02 80);
+  /* Texto para elementos silenciados en modo oscuro. */
+  --muted-foreground: oklch(0.70 0.02 80);
+  /* Color de acento en modo oscuro. */
+  --accent: oklch(0.35 0.08 140);
+  /* Texto sobre el color de acento en modo oscuro. */
+  --accent-foreground: oklch(0.98 0.01 90);
+  /* Color para acciones destructivas (se mantiene). */
+  --destructive: oklch(0.577 0.245 27.325);
+  /* Texto para elementos destructivos (se mantiene). */
+  --destructive-foreground: oklch(0.985 0 0);
+  /* Color de bordes en modo oscuro. */
+  --border: oklch(0.30 0.02 80);
+  /* Fondo de inputs en modo oscuro. */
+  --input: oklch(0.30 0.02 80);
+  /* Color de anillo de enfoque (se mantiene). */
+  --ring: oklch(0.85 0.18 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .flower-corner {
+    @apply absolute w-32 h-32 md:w-48 md:h-48 pointer-events-none z-10;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}

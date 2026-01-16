@@ -1,0 +1,157 @@
+import { Countdown } from "@/components/Countdown";
+import { FloralSection } from "@/components/FloralSection";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { Timeline } from "@/components/Timeline";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2 } from "lucide-react";
+
+export default function Home() {
+  const weddingDate = "2026-05-29T18:00:00";
+
+  const timelineEvents = [
+    { time: "4:00 PM", title: "Ceremonia", icon: CheckCircle2 }, // Icono genérico, idealmente anillos
+    { time: "5:00 PM", title: "Fotografía", icon: Camera },
+    { time: "6:00 PM", title: "Cocktail", icon: Wine },
+    { time: "7:00 PM", title: "Cena", icon: Utensils },
+    { time: "8:00 PM", title: "Torta", icon: Cake },
+    { time: "9:00 PM", title: "Fiesta", icon: Music },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-12 px-4 text-center">
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent -z-10" />
+        
+        {/* Arco Floral e Imagen Principal */}
+        <div className="relative w-full max-w-md mx-auto mb-8 animate-in fade-in zoom-in duration-1000">
+          <img 
+            src="/images/hero-arch.png" 
+            alt="Nicolás y Carli bajo el arco floral" 
+            className="w-full h-auto drop-shadow-xl"
+          />
+        </div>
+
+        <div className="space-y-6 max-w-lg mx-auto z-10">
+          <MusicPlayer />
+          
+          <div className="space-y-2 mt-8">
+            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
+              Te invitamos a celebrar nuestro matrimonio el día
+            </p>
+            <div className="flex flex-col items-center py-4">
+              <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Mayo</span>
+              <div className="flex items-center gap-4 md:gap-8 border-y border-primary/30 py-4 px-8 md:px-12">
+                <span className="text-sm md:text-base uppercase tracking-widest">Viernes</span>
+                <span className="text-6xl md:text-7xl font-serif font-bold text-primary">29</span>
+                <span className="text-sm md:text-base uppercase tracking-widest">18:00 Hrs</span>
+              </div>
+              <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mt-2">2026</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cuenta Regresiva */}
+      <FloralSection className="bg-white/50" withDivider>
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground">Faltan</h2>
+          <Countdown targetDate={weddingDate} />
+        </div>
+      </FloralSection>
+
+      {/* Ubicación */}
+      <FloralSection className="bg-white/50" withDivider>
+        <div className="space-y-16 text-center max-w-2xl mx-auto">
+          {/* Recepción */}
+          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
+            <h2 className="text-5xl font-script text-foreground">Recepción</h2>
+            <div className="space-y-1">
+              <p className="text-lg font-medium">Iglesia Inmaculada Concepción 257</p>
+              <p className="text-muted-foreground">Santiago a las 18:00 hrs</p>
+            </div>
+            <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
+              <MapPin className="w-4 h-4 mr-2" />
+              Ubicación
+            </Button>
+          </div>
+
+          {/* Fiesta */}
+          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
+            <h2 className="text-5xl font-script text-foreground">Fiesta</h2>
+            <div className="space-y-1">
+              <p className="text-lg font-medium">Centro de eventos Las Flores</p>
+              <p className="text-muted-foreground">Santiago a las 19:00 hrs</p>
+            </div>
+            <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
+              <MapPin className="w-4 h-4 mr-2" />
+              Ubicación
+            </Button>
+          </div>
+        </div>
+      </FloralSection>
+
+      {/* Itinerario */}
+      <FloralSection className="bg-primary/5" withDivider>
+        <h2 className="text-4xl font-serif text-center mb-12">Itinerario</h2>
+        <Timeline events={timelineEvents} />
+      </FloralSection>
+
+      {/* Confirmación */}
+      <FloralSection>
+        <div className="text-center max-w-xl mx-auto space-y-8">
+          <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Tu presencia es muy importante para nosotros. Cuéntanos por WhatsApp si podrás venir.
+          </p>
+          <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white rounded-full px-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            Confirmar por WhatsApp
+          </Button>
+        </div>
+      </FloralSection>
+
+      {/* Dress Code */}
+      <FloralSection className="bg-white/50">
+        <div className="text-center max-w-xl mx-auto space-y-6">
+          <h2 className="text-5xl font-script mb-8">Dress code</h2>
+          <div className="flex justify-center mb-6">
+            <Shirt className="w-16 h-16 text-primary opacity-80" strokeWidth={1} />
+          </div>
+          <p className="text-lg text-muted-foreground">
+            Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
+          </p>
+        </div>
+      </FloralSection>
+
+      {/* Regalo */}
+      <FloralSection withDivider>
+        <div className="text-center max-w-xl mx-auto space-y-8">
+          <h2 className="text-5xl font-script">Regalo</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Tu presencia ya es un regalo, pero si quieres ayudarnos a comenzar esta nueva etapa, puedes hacerlo por transferencia.
+          </p>
+          
+          <Card className="border-none shadow-lg bg-white/80 backdrop-blur">
+            <CardContent className="p-8 space-y-4 text-left md:text-center">
+              <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>
+              <div className="space-y-2 text-sm md:text-base font-mono text-muted-foreground">
+                <p><strong className="text-foreground">NOMBRE:</strong> Nicolás Lagos</p>
+                <p><strong className="text-foreground">RUT:</strong> 12.345.678-9</p>
+                <p><strong className="text-foreground">CUENTA:</strong> Vista</p>
+                <p><strong className="text-foreground">BANCO:</strong> Banco de Chile</p>
+                <p><strong className="text-foreground">MAIL:</strong> novios@ejemplo.com</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </FloralSection>
+
+      {/* Footer */}
+      <footer className="py-12 text-center text-muted-foreground text-sm">
+        <p className="font-serif italic">Con amor, Nicolás & Carli</p>
+        <p className="mt-2 text-xs opacity-50">29 . 05 . 2026</p>
+      </footer>
+    </div>
+  );
+}
