@@ -13,12 +13,14 @@ services:
       - TNS_ADMIN=/app/wallet
     volumes:
       # Aquí conectaremos la Wallet real del servidor al contenedor
-      - ./wallet/Wallet_bodaDB:/app/wallet
+      - ./wallet/wallet_bodadb:/app/wallet
     restart: always
 
   # Servicio del Frontend (React)
   frontend:
-    build: ./frontend/client
+    build:
+      context: ./frontend
+      dockerfile: client/Dockerfile # <--- Le decimos dónde está el Dockerfile
     container_name: boda-frontend
     ports:
       - "80:80"

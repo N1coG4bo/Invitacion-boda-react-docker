@@ -22,7 +22,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copiamos nuestra configuración personalizada de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY client/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
