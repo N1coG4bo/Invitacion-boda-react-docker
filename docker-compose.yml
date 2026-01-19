@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   # Servicio del Backend (Java)
   backend:
@@ -6,7 +8,8 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_USER=ADMIN
+    # Usamos variables que leeremos del archivo .env
+      - DB_USER=${DB_USER}
       # Las contraseñas reales las pondremos en un archivo .env en el servidor
       # Por ahora, placeholders
       - DB_PASSWORD=${DB_PASSWORD}
@@ -23,7 +26,7 @@ services:
       dockerfile: client/Dockerfile # <--- Le decimos dónde está el Dockerfile
     container_name: boda-frontend
     ports:
-      - "80:80"
+      - "8081:80"
     depends_on:
       - backend
     restart: always
