@@ -18,8 +18,8 @@ RUN npm run build
 # Etapa 2: Servidor Web (Nginx)
 FROM nginx:alpine
 
-# Copiamos el build de React a la carpeta de Nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+# Entramos hasta 'dist/public' para sacar las cosas de la caja
+COPY --from=build /app/dist/public /usr/share/nginx/html
 
 # Copiamos nuestra configuración personalizada de Nginx
 COPY client/nginx.conf /etc/nginx/conf.d/default.conf
