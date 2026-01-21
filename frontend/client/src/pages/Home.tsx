@@ -20,12 +20,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-12 px-4 text-center">
+     {/* Hero Section */}
+      <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16"> 
+        {/* ^^^ MAGIA 1: lg:flex-row (al lado en PC), lg:text-left (texto izq en PC), gap (espacio entre ellos) */}
+
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent -z-10" />
         
-        {/* Arco Floral e Imagen Principal */}
-        <div className="relative w-full max-w-md mx-auto mb-8 animate-in fade-in zoom-in duration-1000">
+        {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
+        <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:w-1/2 animate-in fade-in zoom-in duration-1000">
+           {/* ^^^ MAGIA 2: lg:w-1/2 (mitad ancho), lg:mx-0 (quita el centrado automático en PC) */}
           <img 
             src="/images/hero-arch.png" 
             alt="Nicolás y Carli bajo el arco floral" 
@@ -33,20 +36,30 @@ export default function Home() {
           />
         </div>
 
-        <div className="space-y-6 max-w-lg mx-auto z-10">
-          <MusicPlayer />
+        {/* BLOQUE 2: El Texto y Reproductor (La otra mitad) */}
+        <div className="space-y-6 max-w-lg mx-auto lg:mx-0 lg:w-1/2 z-10 flex flex-col items-center lg:items-center">
+           {/* ^^^ MAGIA 3: lg:items-start (alinea elementos a la izquierda en PC) */}
           
-          <div className="space-y-2 mt-8">
-            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
+          <div className="w-full max-w-xs"> {/* Contenedor para limitar ancho del player */}
+            <MusicPlayer />
+          </div>
+          
+          <div className="space-y-2 mt-8 w-full">
+            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide text-center">
               Te invitamos a celebrar nuestro matrimonio el día
             </p>
-            <div className="flex flex-col items-center py-4">
+            
+            {/* Fecha: En PC la mantenemos centrada respecto a sí misma o la alineamos izquierda según gusto */}
+            <div className="flex flex-col items-center lg:items-center py-4">
               <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Mayo</span>
+              
+              {/* Caja de la fecha */}
               <div className="flex items-center gap-4 md:gap-8 border-y border-primary/30 py-4 px-8 md:px-12">
                 <span className="text-sm md:text-base uppercase tracking-widest">Viernes</span>
                 <span className="text-6xl md:text-7xl font-serif font-bold text-primary">29</span>
                 <span className="text-sm md:text-base uppercase tracking-widest">18:00 Hrs</span>
               </div>
+              
               <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mt-2">2026</span>
             </div>
           </div>
