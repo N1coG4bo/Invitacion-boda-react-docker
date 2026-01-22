@@ -4,7 +4,7 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 import { Timeline } from "@/components/Timeline";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2 } from "lucide-react";
+import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const weddingDate = "2026-05-29T18:00:00";
@@ -17,8 +17,21 @@ export default function Home() {
     { time: "8:00 PM", title: "Torta", icon: Cake },
     { time: "9:00 PM", title: "Fiesta", icon: Music },
   ];
+  // 1. DEFINIMOS LOS MENSAJES AQUÍ (Con emojis reales ✨)
+  // Usamos encodeURIComponent para que WhatsApp los entienda perfecto
+  // TRUCO DE MAGIA: Usamos códigos Unicode para los emojis.
+  // \u{1F48D} = Anillo 💍
+  // \u{1F935} = Novio 🤵🏻‍♂️
+  // \u{1F470} = Novia 👰🏻‍♀️
+  // \u{1F389} = Fiesta 🎉
+  // \u{1F942} = Brindis 🥂
+ // Usamos encodeURIComponent() para empaquetarlos para el viaje a WhatsApp
+  const textoNico = "¡Hola Nico! Confirmo mi asistencia a su matrimonio. ¡Qué emoción! \u{1F48D}\u{1F935}\u{1F389}";
+  const linkNico = `https://wa.me/56950781737?text=${encodeURIComponent(textoNico)}`;
 
-  return (
+  const textoCarli = "¡Hola Carli! Confirmo mi asistencia a su matrimonio. ¡Nos vemos allá! \u{1F48D}\u{1F470}\u{1F942}";
+  const linkCarli = `https://wa.me/56956294656?text=${encodeURIComponent(textoCarli)}`;
+   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16"> 
@@ -111,16 +124,47 @@ export default function Home() {
         <Timeline events={timelineEvents} />
       </FloralSection>
 
-      {/* Confirmación */}
+{/* Confirmación */}
       <FloralSection>
-        <div className="text-center max-w-xl mx-auto space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-8">
           <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Tu presencia es muy importante para nosotros. Cuéntanos por WhatsApp si podrás venir.
+            Tu presencia es muy importante. Confirma tu asistencia enviándonos un mensaje directo por WhatsApp a cualquiera de los dos.
           </p>
-          <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white rounded-full px-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-            Confirmar por WhatsApp
-          </Button>
+          
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-6">
+            
+            {/* Botón 1: Confirmar con Nicolás */}
+            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
+              <a 
+                href={linkNico} // <--- Aquí usamos la variable segura
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
+              >
+                <MessageCircle className="w-6 h-6" />
+                Confirmar con Nicolás
+              </a>
+            </Button>
+
+            {/* Botón 2: Confirmar con Carli */}
+            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
+              <a 
+                href={linkCarli} // <--- Aquí usamos la variable segura
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
+              >
+                <MessageCircle className="w-6 h-6" />
+                Confirmar con Carli
+              </a>
+            </Button>
+
+          </div>
+          
+          <p className="text-sm text-muted-foreground italic mt-4">
+            (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
+          </p>
         </div>
       </FloralSection>
 
