@@ -12,10 +12,13 @@ export function FloralSection({ children, className, withDivider = false }: Flor
     <section className={cn("relative py-16 md:py-24 overflow-hidden", className)}>
       {/* Decoraciones florales en las esquinas (usando CSS o imágenes) */}
       <img 
-        src="/images/arco-floral-transparente.png" 
+        src="/images/arco_floral_transparente_v14.png" 
         alt="Floral decoration" 
-        className="absolute top-0 left-0 w-32 md:w-48 -translate-x-1/4 -translate-y-1/4 opacity-80"
+        className="absolute top-0 left-0 w-32 md:w-48 -translate-x-1/4 -translate-y-1/4 opacity-80 "
       />
+
+
+      
 
       <img 
         src="/images/floral-corner-2.png" 
