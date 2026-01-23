@@ -1,5 +1,6 @@
 import { Countdown } from "@/components/Countdown";
 import { FloralSection } from "@/components/FloralSection";
+import { FloralSectionTop } from "@/components/FloralSectionTop";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { Timeline } from "@/components/Timeline";
 import { Button } from "@/components/ui/button";
@@ -18,10 +19,10 @@ export default function Home() {
     { time: "9:00 PM", title: "Fiesta", icon: Music },
   ];
 
-// --- SOLUCIÓN FINAL: API DIRECTA + ASCII ---
+  // --- SOLUCIÓN FINAL: API DIRECTA + ASCII ---
   // 1. Usamos 'api.whatsapp.com' en lugar de 'wa.me' para evitar redirecciones que rompen emojis.
   // 2. El texto es 100% código seguro. No hay tildes ni emojis visuales aquí.
-  
+
   // MENSAJE NICO: "¡Hola Nico! Confirmo mi asistencia a su matrimonio. ¡Nos vemos allá! 💍🤵🏻‍♂️🎉"
   // Nota: Usamos tus números reales que venían en el código anterior.
   const linkNico = "https://api.whatsapp.com/send?phone=56950781737&text=%C2%A1Hola%20Nico!%20Confirmo%20mi%20asistencia%20a%20su%20matrimonio.%20%C2%A1Nos%20vemos%20all%C3%A1!%20%F0%9F%92%8D%F0%9F%A4%B5%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F%F0%9F%8E%89";
@@ -30,51 +31,61 @@ export default function Home() {
   const linkCarli = "https://api.whatsapp.com/send?phone=56965294656&text=%C2%A1Hola%20Carli!%20Confirmo%20mi%20asistencia%20a%20su%20matrimonio.%20%C2%A1Qu%C3%A9%20emoci%C3%B3n!%20%F0%9F%92%8D%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F%F0%9F%A5%82";
 
 
-   return (
+  return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-     {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16"> 
-        {/* ^^^ MAGIA 1: lg:flex-row (al lado en PC), lg:text-left (texto izq en PC), gap (espacio entre ellos) */}
-
+      {/* Hero Section */}
+      <FloralSectionTop>
+        <div className="space-y-16 text-center max-w-2xl mx-auto">
+          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
+            <h2 className="text-5xl font-script text-foreground">Te invitamos a nuestra boda!</h2>
+            <h1 className="text-5xl font-script text-foreground">Carli  &  Nicolás!</h1>
+          </div>
+        </div>
         {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
-        <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:w-1/2 animate-in fade-in zoom-in duration-1000">
-           {/* ^^^ MAGIA 2: lg:w-1/2 (mitad ancho), lg:mx-0 (quita el centrado automático en PC) */}
-          <img 
-            src="/images/hero-arch.png" 
-            alt="Nicolás y Carli bajo el arco floral" 
+        <div className="w-1/2 md:w-1/2 mx-auto">
+          <img
+            src="/images/"
+            alt="Nicolás y Carli bajo el arco floral"
             className="w-full h-auto drop-shadow-xl"
           />
         </div>
+      </FloralSectionTop>
+
+
+
+
+      <div className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16">
+
 
         {/* BLOQUE 2: El Texto y Reproductor (La otra mitad) */}
         <div className="space-y-6 max-w-lg mx-auto lg:mx-0 lg:w-1/2 z-10 flex flex-col items-center lg:items-center">
-           {/* ^^^ MAGIA 3: lg:items-start (alinea elementos a la izquierda en PC) */}
-          
+          {/* ^^^ MAGIA 3: lg:items-start (alinea elementos a la izquierda en PC) */}
+
           <div className="w-full max-w-xs"> {/* Contenedor para limitar ancho del player */}
             <MusicPlayer />
           </div>
-          
+
           <div className="space-y-2 mt-8 w-full">
             <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide text-center">
               Te invitamos a celebrar nuestro matrimonio el día
             </p>
-            
+
             {/* Fecha: En PC la mantenemos centrada respecto a sí misma o la alineamos izquierda según gusto */}
             <div className="flex flex-col items-center lg:items-center py-4">
               <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Mayo</span>
-              
+
               {/* Caja de la fecha */}
               <div className="flex items-center gap-4 md:gap-8 border-y border-primary/30 py-4 px-8 md:px-12">
                 <span className="text-sm md:text-base uppercase tracking-widest">Viernes</span>
                 <span className="text-6xl md:text-7xl font-serif font-bold text-primary">29</span>
                 <span className="text-sm md:text-base uppercase tracking-widest">18:00 Hrs</span>
               </div>
-              
+
               <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mt-2">2026</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Cuenta Regresiva */}
       <FloralSection withDivider>
@@ -121,21 +132,21 @@ export default function Home() {
         <Timeline events={timelineEvents} />
       </FloralSection>
 
-{/* Confirmación */}
+      {/* Confirmación */}
       <FloralSection>
         <div className="text-center max-w-2xl mx-auto space-y-8">
           <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Tu presencia es muy importante. Confirma tu asistencia enviándonos un mensaje directo por WhatsApp a cualquiera de los dos.
           </p>
-          
+
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-6">
-            
+
             {/* Botón 1: Confirmar con Nicolás */}
             <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
-              <a 
+              <a
                 href={linkNico} // <--- Aquí usamos la variable segura
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
               >
@@ -146,9 +157,9 @@ export default function Home() {
 
             {/* Botón 2: Confirmar con Carli */}
             <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
-              <a 
+              <a
                 href={linkCarli} // <--- Aquí usamos la variable segura
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
               >
@@ -158,7 +169,7 @@ export default function Home() {
             </Button>
 
           </div>
-          
+
           <p className="text-sm text-muted-foreground italic mt-4">
             (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
           </p>
@@ -185,7 +196,7 @@ export default function Home() {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Tu presencia ya es un regalo, pero si quieres ayudarnos a comenzar esta nueva etapa, puedes hacerlo por transferencia.
           </p>
-          
+
           <Card className="border-none shadow-lg backdrop-blur">
             <CardContent className="p-8 space-y-4 text-left md:text-center">
               <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>

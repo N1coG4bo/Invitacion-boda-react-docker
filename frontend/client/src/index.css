@@ -84,10 +84,10 @@
   --popover-foreground: oklch(0.98 0.01 90); /* Blanco Hueso */
 
   /* Color para textos o elementos de baja importancia. */
-  --muted: oklch(0.85 0.02 80);
+  --muted: oklch(0.98 0.01 90);
   
   /* Texto para elementos silenciados (ej. subtítulos). */
-  --muted-foreground: oklch(0.8 0.03 85);
+  --muted-foreground: oklch(0.98 0.01 90);
 
   /* Color para acciones destructivas. */
   --destructive: oklch(0.577 0.245 27.325);
