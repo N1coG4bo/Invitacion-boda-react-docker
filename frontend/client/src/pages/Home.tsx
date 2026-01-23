@@ -17,20 +17,19 @@ export default function Home() {
     { time: "8:00 PM", title: "Torta", icon: Cake },
     { time: "9:00 PM", title: "Fiesta", icon: Music },
   ];
-  // 1. DEFINIMOS LOS MENSAJES AQUÍ (Con emojis reales ✨)
-  // Usamos encodeURIComponent para que WhatsApp los entienda perfecto
-  // TRUCO DE MAGIA: Usamos códigos Unicode para los emojis.
-  // \u{1F48D} = Anillo 💍
-  // \u{1F935} = Novio 🤵🏻‍♂️
-  // \u{1F470} = Novia 👰🏻‍♀️
-  // \u{1F389} = Fiesta 🎉
-  // \u{1F942} = Brindis 🥂
- // Usamos encodeURIComponent() para empaquetarlos para el viaje a WhatsApp
-  const textoNico = "¡Hola Nico! Confirmo mi asistencia a su matrimonio. ¡Qué emoción! \u{1F48D}\u{1F935}\u{1F389}";
-  const linkNico = `https://wa.me/56950781737?text=${encodeURIComponent(textoNico)}`;
 
-  const textoCarli = "¡Hola Carli! Confirmo mi asistencia a su matrimonio. ¡Nos vemos allá! \u{1F48D}\u{1F470}\u{1F942}";
-  const linkCarli = `https://wa.me/56956294656?text=${encodeURIComponent(textoCarli)}`;
+// --- SOLUCIÓN FINAL: API DIRECTA + ASCII ---
+  // 1. Usamos 'api.whatsapp.com' en lugar de 'wa.me' para evitar redirecciones que rompen emojis.
+  // 2. El texto es 100% código seguro. No hay tildes ni emojis visuales aquí.
+  
+  // MENSAJE NICO: "¡Hola Nico! Confirmo mi asistencia a su matrimonio. ¡Nos vemos allá! 💍🤵🏻‍♂️🎉"
+  // Nota: Usamos tus números reales que venían en el código anterior.
+  const linkNico = "https://api.whatsapp.com/send?phone=56950781737&text=%C2%A1Hola%20Nico!%20Confirmo%20mi%20asistencia%20a%20su%20matrimonio.%20%C2%A1Nos%20vemos%20all%C3%A1!%20%F0%9F%92%8D%F0%9F%A4%B5%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F%F0%9F%8E%89";
+
+  // MENSAJE CARLI: "¡Hola Carli! Confirmo mi asistencia a su matrimonio. ¡Qué emoción! 💍👰🏻‍♀️🥂"
+  const linkCarli = "https://api.whatsapp.com/send?phone=56965294656&text=%C2%A1Hola%20Carli!%20Confirmo%20mi%20asistencia%20a%20su%20matrimonio.%20%C2%A1Qu%C3%A9%20emoci%C3%B3n!%20%F0%9F%92%8D%F0%9F%91%B0%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F%F0%9F%A5%82";
+
+
    return (
     <div className="min-h-screen bg-background overflow-x-hidden">
      {/* Hero Section */}
