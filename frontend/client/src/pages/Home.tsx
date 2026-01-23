@@ -36,8 +36,6 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16"> 
         {/* ^^^ MAGIA 1: lg:flex-row (al lado en PC), lg:text-left (texto izq en PC), gap (espacio entre ellos) */}
 
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent -z-10" />
-        
         {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
         <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:w-1/2 animate-in fade-in zoom-in duration-1000">
            {/* ^^^ MAGIA 2: lg:w-1/2 (mitad ancho), lg:mx-0 (quita el centrado automático en PC) */}
@@ -79,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* Cuenta Regresiva */}
-      <FloralSection className="bg-white/50" withDivider>
+      <FloralSection withDivider>
         <div className="text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground">Faltan</h2>
           <Countdown targetDate={weddingDate} />
@@ -87,7 +85,7 @@ export default function Home() {
       </FloralSection>
 
       {/* Ubicación */}
-      <FloralSection className="bg-white/50" withDivider>
+      <FloralSection withDivider>
         <div className="space-y-16 text-center max-w-2xl mx-auto">
           {/* Recepción */}
           <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
@@ -118,7 +116,7 @@ export default function Home() {
       </FloralSection>
 
       {/* Itinerario */}
-      <FloralSection className="bg-primary/5" withDivider>
+      <FloralSection withDivider>
         <h2 className="text-4xl font-serif text-center mb-12">Itinerario</h2>
         <Timeline events={timelineEvents} />
       </FloralSection>
@@ -168,7 +166,7 @@ export default function Home() {
       </FloralSection>
 
       {/* Dress Code */}
-      <FloralSection className="bg-white/50">
+      <FloralSection>
         <div className="text-center max-w-xl mx-auto space-y-6">
           <h2 className="text-5xl font-script mb-8">Dress code</h2>
           <div className="flex justify-center mb-6">
@@ -188,7 +186,7 @@ export default function Home() {
             Tu presencia ya es un regalo, pero si quieres ayudarnos a comenzar esta nueva etapa, puedes hacerlo por transferencia.
           </p>
           
-          <Card className="border-none shadow-lg bg-white/80 backdrop-blur">
+          <Card className="border-none shadow-lg backdrop-blur">
             <CardContent className="p-8 space-y-4 text-left md:text-center">
               <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>
               <div className="space-y-2 text-sm md:text-base font-mono text-muted-foreground">
