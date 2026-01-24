@@ -44,9 +44,10 @@ export default function Home() {
         {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
         <div className="w-1/2 md:w-1/2 mx-auto">
           <img
-            src="/images/"
+            src="/images/nico-carli-laguna.webp"
             alt="Nicolás y Carli bajo el arco floral"
-            className="w-full h-auto drop-shadow-xl"
+            // black_70% significa: "Muestra la foto normal hasta el 70%, y luego desvanece"
+            className="w-full h-auto drop-shadow-xl [mask-image:linear-gradient(black_70%,transparent)] opacity-75 opacity-60 hover:opacity-100 transition-opacity duration-600"
           />
         </div>
       </FloralSectionTop>

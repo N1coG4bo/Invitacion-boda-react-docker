@@ -47,7 +47,7 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
         // rotate-45: La rotación solicitada.
         // translate-x-[20%] -translate-y-[35%]: Estos valores "empujan" la imagen hacia afuera.
         // Juega con estos porcentajes si quieres que se meta más o menos en la pantalla.
-        className="left-1/2 absolute top-0 w-2/3 md:w-4/12 transform translate-x-[40%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none lg:max-w-[300px]"
+        className="left-1/2 absolute top-0 w-0/3 md:w-4/12 transform translate-x-[40%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none lg:max-w-[300px]"
       />
 
           {/* --- IMAGEN RECTA MEDIO --- */}
@@ -63,6 +63,19 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
         className="left-1/2 absolute top-0 w-2/3 md:w-4/12 transform translate-x-[-55%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none lg:max-w-[300px]"
       />
 
+                {/* --- IMAGEN RECTA MEDIO, BOTTOM --- */}
+      <img 
+        src="/images/arco-floral-transparente-recto.png" // Usamos la imagen curva
+        alt="Decoración floral de los bordes"
+        // EXPLICACIÓN DE CLASES CLAVE:
+        // absolute top-0 right-0: Posición fija en la esquina superior derecha.
+        // w-2/3 md:w-5/12: Tamaño relativo. 2/3 del ancho en celular, un poco menos de la mitad en PC.
+        // rotate-45: La rotación solicitada.
+        // translate-x-[20%] -translate-y-[35%]: Estos valores "empujan" la imagen hacia afuera.
+        // Juega con estos porcentajes si quieres que se meta más o menos en la pantalla.
+        className="left-1/2 absolute bottom-0 w-2/3 md:w-4/12 transform translate-x-[-55%] -translate-y-1/2 -translate-y-[-30%] rotate-180 opacity-90 pointer-events-none select-none lg:max-w-[300px]"
+      />
+
         {/* --- IMAGEN RECTA IZQ. --- */}
       <img 
         src="/images/arco-floral-transparente-recto.png" // Usamos la imagen curva
@@ -73,7 +86,7 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
         // rotate-45: La rotación solicitada.
         // translate-x-[20%] -translate-y-[35%]: Estos valores "empujan" la imagen hacia afuera.
         // Juega con estos porcentajes si quieres que se meta más o menos en la pantalla.
-        className="left-1/2 absolute top-0 w-2/3 md:w-4/12 transform translate-x-[-155%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none  lg:max-w-[300px]"
+        className="left-1/2 absolute top-0 w-0/3 md:w-4/12 transform translate-x-[-155%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none  lg:max-w-[300px]"
       />
 
         {/* --- IMAGEN RECTA VERTICAL DER. --- */}
@@ -89,18 +102,7 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
         className="left-1/2 absolute top-0 w-2/3 md:w-4/12 transform translate-x-[-155%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none  lg:max-w-[300px]"
       />
 
-        {/* --- IMAGEN RECTA VERTICAL IZQ. --- */}
-      <img 
-        // src="/images/arco-floral-transparente-recto.png" 
-        alt="Decoración floral de los bordes"
-        // EXPLICACIÓN DE CLASES CLAVE:
-        // absolute top-0 right-0: Posición fija en la esquina superior derecha.
-        // w-2/3 md:w-5/12: Tamaño relativo. 2/3 del ancho en celular, un poco menos de la mitad en PC.
-        // rotate-45: La rotación solicitada.
-        // translate-x-[20%] -translate-y-[35%]: Estos valores "empujan" la imagen hacia afuera.
-        // Juega con estos porcentajes si quieres que se meta más o menos en la pantalla.
-        className="left-1/2 absolute top-0 w-2/3 md:w-4/12 transform translate-x-[-155%] -translate-y-1/2 -translate-y-[25%] rotate-0 opacity-90 pointer-events-none select-none  lg:max-w-[300px]"
-      />
+
 
       <div className="container relative z-10">
         {children}
