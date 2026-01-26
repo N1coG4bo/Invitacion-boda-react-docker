@@ -35,31 +35,59 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
       <FloralSectionTop>
-        <div className="space-y-16 text-center max-w-2xl mx-auto">
-          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
-            <h2 className="text-5xl font-script text-foreground">Te invitamos a nuestra boda!</h2>
-            <h1 className="text-5xl font-script text-foreground">Carli  &  Nicolás!</h1>
-          </div>
-        </div>
         {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
-        <div className="w-1/2 md:w-1/2 mx-auto">
+        <div>
           <img
-            src="/images/nico-carli-laguna.webp"
+            src="/images/marco-corazon-nico-carli.webp"
             alt="Nicolás y Carli bajo el arco floral"
             // black_70% significa: "Muestra la foto normal hasta el 70%, y luego desvanece"
-            className="w-full h-auto drop-shadow-xl [mask-image:linear-gradient(black_70%,transparent)] opacity-75 opacity-60 hover:opacity-100 transition-opacity duration-600"
+            className="
+    /* --- 1. POSICIÓN (Donde va) --- */
+    absolute top-1/2 left-1/2 z-20
+    
+    /* --- 2. CENTRADO (El ajuste fino) --- */
+    -translate-x-1/2 -translate-y-1/2
+
+    /* --- fijo al techo --- */
+    top-[230px]
+    
+    /* --- 3. TAMAÑO (Control responsivo) --- */
+    w-[510px] md:w-3/12 lg:max-w-[900px] max-w-none
+    
+    /* --- 4. EXTRAS (Decoración e interacción) --- */
+    opacity-90 pointer-events-none select-none
+  "
           />
         </div>
+
+{/* AGREGAMOS:
+            1. relative z-30: Para que el texto flote ENCIMA de la foto (por si acaso).
+            2. pt-[350px]: EMPUJÓN GIGANTE hacia abajo. 
+               (Ajusta este 350px a 400px o 300px según qué tan grande sea tu corazón) 
+        */}
+        <div className="space-y-4 relative z-30 pt-[381px] md:pt-[450px]">
+          
+          <h2 className="text-[40px] md:text-2xl font-script text-foreground text-center">
+            Te invitamos a nuestra boda!
+          </h2>
+          
+          <h1 className="text-[50px] md:text-6xl font-script text-foreground text-center">
+            Carli & Nicolás!
+          </h1>
+          
+        </div>
+
       </FloralSectionTop>
 
 
 
-
-      <div className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center pt-20 pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16">
+      <FloralSection>
+      {/* Reproducto y fecha */}
+      <div className="relative flex flex-col lg:flex-row items-center justify-start pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16">
 
 
         {/* BLOQUE 2: El Texto y Reproductor (La otra mitad) */}
-        <div className="space-y-6 max-w-lg mx-auto lg:mx-0 lg:w-1/2 z-10 flex flex-col items-center lg:items-center">
+        <div className="space-y-6 max-w-lg mx-auto lg:mx-0 lg:w-1/2 z-10 flex flex-col items-center lg:items-start">
           {/* ^^^ MAGIA 3: lg:items-start (alinea elementos a la izquierda en PC) */}
 
           <div className="w-full max-w-xs"> {/* Contenedor para limitar ancho del player */}
@@ -72,7 +100,7 @@ export default function Home() {
             </p>
 
             {/* Fecha: En PC la mantenemos centrada respecto a sí misma o la alineamos izquierda según gusto */}
-            <div className="flex flex-col items-center lg:items-center py-4">
+            <div className="flex flex-col items-center lg:items-center">
               <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Mayo</span>
 
               {/* Caja de la fecha */}
@@ -87,6 +115,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </FloralSection>
+
+
 
       {/* Cuenta Regresiva */}
       <FloralSection withDivider>
