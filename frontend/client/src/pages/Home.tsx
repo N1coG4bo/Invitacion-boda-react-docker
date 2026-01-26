@@ -6,6 +6,7 @@ import { Timeline } from "@/components/Timeline";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2, MessageCircle } from "lucide-react";
+import { FloralSeparator } from "@/components/flowers/FloralSeparator";
 
 export default function Home() {
   const weddingDate = "2026-05-29T18:00:00";
@@ -34,51 +35,39 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <FloralSectionTop>
-        {/* BLOQUE 1: La Imagen (Ahora ocupará la mitad en PC) */}
-        <div>
-          <img
-            src="/images/marco-corazon-nico-carli.webp"
-            alt="Nicolás y Carli bajo el arco floral"
-            // black_70% significa: "Muestra la foto normal hasta el 70%, y luego desvanece"
-            className="
-    /* --- 1. POSICIÓN (Donde va) --- */
-    absolute top-1/2 left-1/2 z-20
-    
-    /* --- 2. CENTRADO (El ajuste fino) --- */
-    -translate-x-1/2 -translate-y-1/2
+     <FloralSectionTop>
+        
+        {/* Contenedor Flexible */}
+        <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
 
-    /* --- fijo al techo --- */
-    top-[230px]
-    
-    /* --- 3. TAMAÑO (Control responsivo) --- */
-    w-[510px] md:w-3/12 lg:max-w-[900px] max-w-none
-    
-    /* --- 4. EXTRAS (Decoración e interacción) --- */
-    opacity-90 pointer-events-none select-none
-  "
-          />
-        </div>
+          {/* FOTO CORAZÓN */}
+          <div className="relative w-full flex justify-center">
+             <img
+              src="/images/marco-corazon-nico-carli.webp"
+              alt="Nicolás y Carli bajo el arco floral"
+              className="relative z-20 w-[90%] max-w-[500px] md:w-[500px] lg:max-w-[700px] opacity-90 pointer-events-none select-none object-contain"
+            />
+          </div>
 
-{/* AGREGAMOS:
-            1. relative z-30: Para que el texto flote ENCIMA de la foto (por si acaso).
-            2. pt-[350px]: EMPUJÓN GIGANTE hacia abajo. 
-               (Ajusta este 350px a 400px o 300px según qué tan grande sea tu corazón) 
-        */}
-        <div className="space-y-4 relative z-30 pt-[381px] md:pt-[450px]">
-          
-          <h2 className="text-[40px] md:text-2xl font-script text-foreground text-center">
-            Te invitamos a nuestra boda!
-          </h2>
-          
-          <h1 className="text-[50px] md:text-6xl font-script text-foreground text-center">
-            Carli & Nicolás!
-          </h1>
-          
+          {/* TEXTO */}
+          <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24">
+            <h2 className="text-[30px] md:text-3xl font-script text-foreground drop-shadow-md">
+              Te invitamos a nuestra boda!
+            </h2>
+            <h1 className="text-[50px] md:text-7xl font-script text-foreground drop-shadow-lg leading-tight">
+              Carli & Nicolás!
+            </h1>
+          </div>
+
+          {/* --- 3. TU NUEVO COMPONENTE --- 
+              Aquí solo ajustas el margen específico para esta pantalla.
+              Si en el futuro lo usas en el footer, le pasas otro margen y listo.
+          */}
+          <FloralSeparator className="-mt-4 md:-mt-8" />
+
         </div>
 
       </FloralSectionTop>
-
 
 
       <FloralSection>
