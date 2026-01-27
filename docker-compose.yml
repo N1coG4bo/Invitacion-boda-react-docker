@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+#--------------------------------------
+#BACKEND, desactivado con '#' para pruebas sin backend
+#--------------------------------------
+
+  # Servicio del Backend (Java)
+  # backend:
+  # build: ./backend
+  # container_name: boda-backend
+  # ports:
+  #   - "8080:8080"
+  # environment:
+    # Usamos variables que leeremos del archivo .env
+  #   - DB_USER=${DB_USER}
+      # Las contraseñas reales las pondremos en un archivo .env en el servidor
+      # Por ahora, placeholders
+  #   - DB_PASSWORD=${DB_PASSWORD}
+  #   - TNS_ADMIN=/app/wallet
+  # volumes:
+      # Aquí conectaremos la Wallet real del servidor al contenedor
+  #   - ./wallet/wallet_bodadb:/app/wallet
+  # restart: always
+
+  # Servicio del Frontend (React)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: client/Dockerfile # <--- Le decimos dónde está el Dockerfile
+    container_name: boda-frontend
+    ports:
+      - "8081:80"
+    # depends_on:
+    # - backend
+    restart: always
