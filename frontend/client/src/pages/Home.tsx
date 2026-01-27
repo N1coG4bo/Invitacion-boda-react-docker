@@ -70,9 +70,8 @@ export default function Home() {
       </FloralSectionTop>
 
 
-      <FloralSection>
       {/* Reproducto y fecha */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-start pb-12 px-4 text-center lg:text-left lg:px-20 gap-8 lg:gap-16">
+      <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
 
 
         {/* BLOQUE 2: El Texto y Reproductor (La otra mitad) */}
@@ -103,28 +102,27 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <FloralSeparator className="-mt-4 md:-mt-8" />
+
       </div>
-      </FloralSection>
 
 
 
       {/* Cuenta Regresiva */}
-      <FloralSection withDivider>
-        <div className="text-center space-y-8">
+        <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground">Faltan</h2>
           <Countdown targetDate={weddingDate} />
+          <FloralSeparator className="-mt-4 md:-mt-8" />
         </div>
-      </FloralSection>
 
       {/* Ubicación */}
-      <FloralSection withDivider>
-        <div className="space-y-16 text-center max-w-2xl mx-auto">
+        <div className="space-y-16 text-center max-w-2xl mx-auto flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           {/* Recepción */}
           <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
             <h2 className="text-5xl font-script text-foreground">Recepción</h2>
             <div className="space-y-1">
-              <p className="text-lg font-medium">Iglesia Inmaculada Concepción 257</p>
-              <p className="text-muted-foreground">Santiago a las 18:00 hrs</p>
+              <p className="text-lg font-medium">Ingrese_Direccióin</p>
+              <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
             </div>
             <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
               <MapPin className="w-4 h-4 mr-2" />
@@ -136,26 +134,29 @@ export default function Home() {
           <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
             <h2 className="text-5xl font-script text-foreground">Fiesta</h2>
             <div className="space-y-1">
-              <p className="text-lg font-medium">Centro de eventos Las Flores</p>
-              <p className="text-muted-foreground">Santiago a las 19:00 hrs</p>
+              <p className="text-lg font-medium">Ingrese_capilla</p>
+              <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
             </div>
             <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
               <MapPin className="w-4 h-4 mr-2" />
               Ubicación
             </Button>
           </div>
+          <FloralSeparator className="-mt-4 md:-mt-8" />
+
         </div>
-      </FloralSection>
 
       {/* Itinerario */}
-      <FloralSection withDivider>
-        <h2 className="text-4xl font-serif text-center mb-12">Itinerario</h2>
+      <div className=""> 
+        <h2 className="text-4xl font-serif text-center mb-12 mt-5">Itinerario</h2>
         <Timeline events={timelineEvents} />
-      </FloralSection>
+        <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+          <FloralSeparator className="-mt-4 md:-mt-8" />
+        </div>
+      </div>
 
       {/* Confirmación */}
-      <FloralSection>
-        <div className="text-center max-w-2xl mx-auto space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Tu presencia es muy importante. Confirma tu asistencia enviándonos un mensaje directo por WhatsApp a cualquiera de los dos.
@@ -194,12 +195,11 @@ export default function Home() {
           <p className="text-sm text-muted-foreground italic mt-4">
             (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
           </p>
+          <FloralSeparator className="-mt-4 md:-mt-8" />
         </div>
-      </FloralSection>
 
       {/* Dress Code */}
-      <FloralSection>
-        <div className="text-center max-w-xl mx-auto space-y-6">
+        <div className="text-center max-w-xl mx-auto space-y-6 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           <h2 className="text-5xl font-script mb-8">Dress code</h2>
           <div className="flex justify-center mb-6">
             <Shirt className="w-16 h-16 text-primary opacity-80" strokeWidth={1} />
@@ -207,15 +207,15 @@ export default function Home() {
           <p className="text-lg text-muted-foreground">
             Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
           </p>
+          <FloralSeparator className="-mt-4 md:-mt-8" />
+
         </div>
-      </FloralSection>
 
       {/* Regalo */}
-      <FloralSection withDivider>
-        <div className="text-center max-w-xl mx-auto space-y-8">
+        <div className="text-center max-w-xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           <h2 className="text-5xl font-script">Regalo</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Tu presencia ya es un regalo, pero si quieres ayudarnos a comenzar esta nueva etapa, puedes hacerlo por transferencia.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
           </p>
 
           <Card className="border-none shadow-lg backdrop-blur">
@@ -230,8 +230,9 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
+          <FloralSeparator className="-mt-4 md:-mt-8" />
+
         </div>
-      </FloralSection>
 
       {/* Footer */}
       <footer className="py-12 text-center text-muted-foreground text-sm">

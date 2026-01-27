@@ -24,37 +24,43 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
     )}>
 
 
-            {/* --- banner --- */}
-      <img
-        src="/images/banner-25-01-canva.webp" // Usamos la imagen curva
+   <img
+        src="/images/banner-25-01-canva.webp"
         alt="Decoración floral esquina superior izquierda"
-        // EXPLICACIÓN DE CLASES CLAVE:
-        // absolute top-0 left-0: Posición fija en la esquina superior izquierda.
-        // w-2/3 md:w-5/12: Tamaño relativo. 2/3 del ancho en celular, un poco menos de la mitad en PC.
-        // rotate-45: La rotación solicitada.
-        // translate-x-[20%] -translate-y-[35%]: Estos valores "empujan" la imagen hacia afuera.
-        // Juega con estos porcentajes si quieres que se meta más o menos en la pantalla.
         className="
-    absolute 
-    z-20
-    
-    /* 1. EL TAMAÑO (Contrólalo aquí sin miedo) */
-    w-[395px] md:w-[800px] lg:w-[600px] max-w-none max-md:none
+          /* 📱 1. MÓVIL (SAGRADO - NO TOCAR) */
+          absolute z-20
+          top-[-3px] 
+          left-1/2 -translate-x-1/2
+          w-[395px] max-w-none
+          
+          /* 💻 2. PC / NOTEBOOK (SOLUCIÓN DEL CORTE) */
+          md:relative 
+          md:left-auto md:translate-x-0
+          
+          /* Aumentamos la altura del contenedor para que quepan las flores */
+          md:w-full 
+          md:h-[500px]
+          md:object-cover
 
-    /* 2. LA POSICIÓN (Usa píxeles exactos desde la esquina) */
-    /* top-[-50px]: La sube 50px hacia afuera del techo */
-    /* right-[-20px]: La mueve 20px hacia la derecha afuera de la pantalla */
-    top-[-3px] 
-    left-1/2 -translate-x-1/2
+          /* 🔥 EL TRUCO DEL ZOOM: */
+          /* scale-[1.25]: Agrandamos la imagen un 25% para que sobre imagen por todos lados */
+          /* origin-top: Hacemos que crezca hacia abajo, manteniendo el techo fijo */
+          md:scale-[1.25] 
+          md:origin-top
 
-    /* 3. LA ROTACIÓN */
-    rotate-[0deg] 
-    
-    /* 4. UTILIDADES */
-    opacity-100 pointer-events-none select-none
-  "
+          /* AJUSTE VERTICAL */
+          /* Subimos la imagen lo suficiente para esconder el borde recto de arriba */
+          md:-mt-[100px]
+          
+          /* IMÁN INFERIOR */
+          /* Esto acerca el corazón de abajo. */
+          /* Si el corazón queda muy lejos, aumenta este número (ej: -350px) */
+          md:-mb-[300px]
+
+          opacity-100 pointer-events-none select-none
+        "
       />
-
 
 
       <div className="container relative z-10">
