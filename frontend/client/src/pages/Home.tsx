@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2, MessageCircle } from "lucide-react";
 import { FloralSeparator } from "@/components/flowers/FloralSeparator";
+import { Hojas } from "@/components/flowers/Hojas";
 
 export default function Home() {
   const weddingDate = "2026-05-29T18:00:00";
@@ -35,30 +36,70 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-     <FloralSectionTop>
-        
+      <FloralSectionTop className="relative">
+
         {/* Contenedor Flexible */}
         <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
 
           {/* FOTO CORAZÓN */}
           <div className="relative w-full flex justify-center">
-             <img
+            <img
               src="/images/marco-corazon-nico-carli.webp"
               alt="Nicolás y Carli bajo el arco floral"
-              className="relative z-20 w-[90%] max-w-[500px] md:w-[500px] lg:max-w-[700px] opacity-90 pointer-events-none select-none object-contain"
+              className="
+      /* 1. Posición y Tamaño (Tus clases base) */
+      relative z-20 
+      w-[90%] max-w-[500px] md:w-[500px] lg:max-w-[700px] 
+      object-contain
+      pointer-events-none select-none
+
+      /* 2. EFECTO SPRAY (Aparición) 💨 */
+      animate-in 
+      fade-in 
+      zoom-in-75       /* Empieza al 75% del tamaño y crece */
+      duration-[1500ms] /* Tarda 1.5 segundos (más lento es más elegante) */
+      ease-out          /* Frena al final */
+      
+      /* 3. Opacidad Final */
+      opacity-90 
+    "
             />
           </div>
 
-          {/* TEXTO */}
+         {/* TEXTO */}
           <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24">
-            <h2 className="text-[30px] md:text-3xl font-script text-foreground drop-shadow-md">
+            
+            {/* 1. SUBTÍTULO: Entrada suave y rápida */}
+            <h2 className="
+              text-[30px] md:text-3xl font-script text-foreground drop-shadow-md
+              
+              /* ANIMACIÓN */
+              animate-in 
+              fade-in 
+              slide-in-from-bottom-4 /* Sube un poquito (16px) */
+              duration-1000          /* Tarda 1 segundo */
+              ease-out
+            ">
               Te invitamos a nuestra boda!
             </h2>
-            <h1 className="text-[50px] md:text-7xl font-script text-foreground drop-shadow-lg leading-tight">
+            
+            {/* 2. NOMBRES: Entrada con retraso (Delay) para el efecto escalonado */}
+            <h1 className="
+              text-[50px] md:text-7xl font-script text-foreground drop-shadow-lg leading-tight
+              
+              /* ANIMACIÓN */
+              animate-in 
+              fade-in 
+              slide-in-from-bottom-8 /* Sube más recorrido (32px) para dar imponencia */
+              zoom-in-95
+              duration-1000 
+              delay-300              /* ESPERA 0.3s antes de empezar (Clave del efecto) */
+              ease-out
+            ">
               Carli & Nicolás!
             </h1>
+            
           </div>
-
           {/* --- 3. TU NUEVO COMPONENTE --- 
               Aquí solo ajustas el margen específico para esta pantalla.
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
@@ -109,45 +150,46 @@ export default function Home() {
 
 
       {/* Cuenta Regresiva */}
-        <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
-          <h2 className="text-4xl md:text-5xl font-serif text-foreground">Faltan</h2>
-          <Countdown targetDate={weddingDate} />
-          <FloralSeparator className="-mt-4 md:-mt-8" />
-        </div>
+      <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        <h2 className="text-4xl md:text-5xl font-serif text-foreground">Faltan</h2>
+        <Countdown targetDate={weddingDate} />
+        <FloralSeparator className="-mt-4 md:-mt-8" />
+      </div>
 
       {/* Ubicación */}
-        <div className="space-y-16 text-center max-w-2xl mx-auto flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
-          {/* Recepción */}
-          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
-            <h2 className="text-5xl font-script text-foreground">Recepción</h2>
-            <div className="space-y-1">
-              <p className="text-lg font-medium">Ingrese_Direccióin</p>
-              <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
-            </div>
-            <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
-              <MapPin className="w-4 h-4 mr-2" />
-              Ubicación
-            </Button>
+      <div className="space-y-16 text-center max-w-2xl mx-auto flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        {/* Recepción */}
+        <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
+          <h2 className="text-5xl font-script text-foreground">Recepción</h2>
+          <div className="space-y-1">
+            <p className="text-lg font-medium">Ingrese_Direccióin</p>
+            <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
           </div>
-
-          {/* Fiesta */}
-          <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
-            <h2 className="text-5xl font-script text-foreground">Fiesta</h2>
-            <div className="space-y-1">
-              <p className="text-lg font-medium">Ingrese_capilla</p>
-              <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
-            </div>
-            <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
-              <MapPin className="w-4 h-4 mr-2" />
-              Ubicación
-            </Button>
-          </div>
-          <FloralSeparator className="-mt-4 md:-mt-8" />
-
+          <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
+            <MapPin className="w-4 h-4 mr-2" />
+            Ubicación
+          </Button>
         </div>
 
+        {/* Fiesta */}
+        <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
+          <h2 className="text-5xl font-script text-foreground">Fiesta</h2>
+          <div className="space-y-1">
+            <p className="text-lg font-medium">Ingrese_capilla</p>
+            <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
+          </div>
+          <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
+            <MapPin className="w-4 h-4 mr-2" />
+            Ubicación
+          </Button>
+        </div>
+        <FloralSeparator className="-mt-4 md:-mt-8" />
+
+      </div>
+
       {/* Itinerario */}
-      <div className=""> 
+      <div className="relative">
+        <Hojas className="" />
         <h2 className="text-4xl font-serif text-center mb-12 mt-5">Itinerario</h2>
         <Timeline events={timelineEvents} />
         <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
@@ -156,83 +198,83 @@ export default function Home() {
       </div>
 
       {/* Confirmación */}
-        <div className="text-center max-w-2xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
-          <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Tu presencia es muy importante. Confirma tu asistencia enviándonos un mensaje directo por WhatsApp a cualquiera de los dos.
-          </p>
+      <div className="text-center max-w-2xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        <h2 className="text-5xl font-script mb-4">Confirmación de asistencia</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Tu presencia es muy importante. Confirma tu asistencia enviándonos un mensaje directo por WhatsApp a cualquiera de los dos.
+        </p>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-6">
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-6">
 
-            {/* Botón 1: Confirmar con Nicolás */}
-            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
-              <a
-                href={linkNico} // <--- Aquí usamos la variable segura
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
-              >
-                <MessageCircle className="w-6 h-6" />
-                Confirmar con Nicolás
-              </a>
-            </Button>
+          {/* Botón 1: Confirmar con Nicolás */}
+          <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
+            <a
+              href={linkNico} // <--- Aquí usamos la variable segura
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
+            >
+              <MessageCircle className="w-6 h-6" />
+              Confirmar con Nicolás
+            </a>
+          </Button>
 
-            {/* Botón 2: Confirmar con Carli */}
-            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
-              <a
-                href={linkCarli} // <--- Aquí usamos la variable segura
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
-              >
-                <MessageCircle className="w-6 h-6" />
-                Confirmar con Carli
-              </a>
-            </Button>
+          {/* Botón 2: Confirmar con Carli */}
+          <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full md:w-auto">
+            <a
+              href={linkCarli} // <--- Aquí usamos la variable segura
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-base font-bold tracking-wide"
+            >
+              <MessageCircle className="w-6 h-6" />
+              Confirmar con Carli
+            </a>
+          </Button>
 
-          </div>
-
-          <p className="text-sm text-muted-foreground italic mt-4">
-            (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
-          </p>
-          <FloralSeparator className="-mt-4 md:-mt-8" />
         </div>
+
+        <p className="text-sm text-muted-foreground italic mt-4">
+          (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
+        </p>
+        <FloralSeparator className="-mt-4 md:-mt-8" />
+      </div>
 
       {/* Dress Code */}
-        <div className="text-center max-w-xl mx-auto space-y-6 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
-          <h2 className="text-5xl font-script mb-8">Dress code</h2>
-          <div className="flex justify-center mb-6">
-            <Shirt className="w-16 h-16 text-primary opacity-80" strokeWidth={1} />
-          </div>
-          <p className="text-lg text-muted-foreground">
-            Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
-          </p>
-          <FloralSeparator className="-mt-4 md:-mt-8" />
-
+      <div className="text-center max-w-xl mx-auto space-y-6 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        <h2 className="text-5xl font-script mb-8">Dress code</h2>
+        <div className="flex justify-center mb-6">
+          <Shirt className="w-16 h-16 text-primary opacity-80" strokeWidth={1} />
         </div>
+        <p className="text-lg text-muted-foreground">
+          Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
+        </p>
+        <FloralSeparator className="-mt-4 md:-mt-8" />
+
+      </div>
 
       {/* Regalo */}
-        <div className="text-center max-w-xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
-          <h2 className="text-5xl font-script">Regalo</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
-          </p>
+      <div className="text-center max-w-xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        <h2 className="text-5xl font-script">Regalo</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
+        </p>
 
-          <Card className="border-none shadow-lg backdrop-blur">
-            <CardContent className="p-8 space-y-4 text-left md:text-center">
-              <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>
-              <div className="space-y-2 text-sm md:text-base font-mono text-muted-foreground">
-                <p><strong className="text-foreground">NOMBRE:</strong> Nicolás Lagos</p>
-                <p><strong className="text-foreground">RUT:</strong> 12.345.678-9</p>
-                <p><strong className="text-foreground">CUENTA:</strong> Vista</p>
-                <p><strong className="text-foreground">BANCO:</strong> Banco de Chile</p>
-                <p><strong className="text-foreground">MAIL:</strong> novios@ejemplo.com</p>
-              </div>
-            </CardContent>
-          </Card>
-          <FloralSeparator className="-mt-4 md:-mt-8" />
+        <Card className="border-none shadow-lg backdrop-blur">
+          <CardContent className="p-8 space-y-4 text-left md:text-center">
+            <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>
+            <div className="space-y-2 text-sm md:text-base font-mono text-muted-foreground">
+              <p><strong className="text-foreground">NOMBRE:</strong> Nicolás Lagos</p>
+              <p><strong className="text-foreground">RUT:</strong> 12.345.678-9</p>
+              <p><strong className="text-foreground">CUENTA:</strong> Vista</p>
+              <p><strong className="text-foreground">BANCO:</strong> Banco de Chile</p>
+              <p><strong className="text-foreground">MAIL:</strong> novios@ejemplo.com</p>
+            </div>
+          </CardContent>
+        </Card>
+        <FloralSeparator className="-mt-4 md:-mt-8" />
 
-        </div>
+      </div>
 
       {/* Footer */}
       <footer className="py-12 text-center text-muted-foreground text-sm">

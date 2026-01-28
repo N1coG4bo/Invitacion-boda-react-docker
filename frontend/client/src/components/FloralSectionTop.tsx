@@ -24,7 +24,7 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
     )}>
 
 
-   <img
+  <img
         src="/images/banner-25-01-canva.webp"
         alt="Decoración floral esquina superior izquierda"
         className="
@@ -38,27 +38,29 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
           md:relative 
           md:left-auto md:translate-x-0
           
-          /* Aumentamos la altura del contenedor para que quepan las flores */
+          /* Aumentamos la altura del contenedor */
           md:w-full 
           md:h-[500px]
           md:object-cover
 
           /* 🔥 EL TRUCO DEL ZOOM: */
-          /* scale-[1.25]: Agrandamos la imagen un 25% para que sobre imagen por todos lados */
-          /* origin-top: Hacemos que crezca hacia abajo, manteniendo el techo fijo */
           md:scale-[1.25] 
           md:origin-top
 
           /* AJUSTE VERTICAL */
-          /* Subimos la imagen lo suficiente para esconder el borde recto de arriba */
           md:-mt-[100px]
           
           /* IMÁN INFERIOR */
-          /* Esto acerca el corazón de abajo. */
-          /* Si el corazón queda muy lejos, aumenta este número (ej: -350px) */
           md:-mb-[300px]
 
           opacity-100 pointer-events-none select-none
+
+          /* ✨ NUEVA ANIMACIÓN: CAÍDA DESDE ARRIBA ✨ */
+          animate-in 
+          slide-in-from-top-10  /* Empieza arriba y baja suavemente */
+          fade-in               /* Aparece progresivamente */
+          duration-[1500ms]     /* Tarda 1.5 segundos en bajar */
+          ease-out              /* Frena suavemente al llegar */
         "
       />
 
