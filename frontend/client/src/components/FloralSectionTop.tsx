@@ -10,17 +10,10 @@ interface FloralSectionProps {
 export function FloralSectionTop({ children, className, withDivider = false }: FloralSectionProps) {
   return (
     <section className={cn(
-      // --- CAMBIOS AQUÍ ---
-      
-      // 1. Cambiamos 'py-16' por 'pt-16 pb-0'. 
-      //    (Solo relleno arriba, CERO relleno abajo).
-      "relative pt-16 md:pt-24 pb-0 overflow-hidden",
-      
-      // 2. Cambiamos 'min-h-[700px]' por 'min-h-fit' o borramos el min-h.
-      //    'min-h-fit' hace que la caja se ajuste al tamaño exacto de la foto+texto.
-      "min-h-fit flex flex-col justify-center",
-      
-      className
+// 1. ESTRUCTURA:
+      // min-h-[85dvh]: Ocupa el 85% de la pantalla del celular SIEMPRE.
+      // Esto empuja la playlist hacia abajo inmediatamente.
+      "relative pt-16 md:pt-24 pb-0 overflow-hidden flex flex-col justify-center", className
     )}>
 
 
@@ -62,6 +55,9 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
           duration-[1500ms]     /* Tarda 1.5 segundos en bajar */
           ease-out              /* Frena suavemente al llegar */
         "
+        /* AGREGAR ESTO AL BANNER PARA QUE CARGUE RÁPIDO: */
+         loading="eager"
+         fetchPriority="high"
       />
 
 

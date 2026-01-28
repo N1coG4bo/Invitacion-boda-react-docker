@@ -7,7 +7,7 @@ interface FloralSeparatorProps {
 export function FloralSeparator({ className }: FloralSeparatorProps) {
   return (
    <img
-      src="/images/separador-flores.PNG"
+      src="/images/separador-flores.webp"
       alt="Decoración floral separadora"
       className={cn(
         // --- CLASES BASE ---

@@ -46,6 +46,8 @@ export default function Home() {
             <img
               src="/images/marco-corazon-nico-carli.webp"
               alt="Nicolás y Carli bajo el arco floral"
+              loading="eager"        // ¡Carga inmediata!
+              fetchPriority="high"   // Prioridad alta sobre otras cosas (como la playlist)
               className="
       /* 1. Posición y Tamaño (Tus clases base) */
       relative z-20 
