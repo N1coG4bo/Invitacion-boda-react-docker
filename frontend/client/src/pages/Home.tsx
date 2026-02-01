@@ -39,7 +39,7 @@ export default function Home() {
       <FloralSectionTop className="relative">
 
         {/* Contenedor Flexible */}
-        <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        <div className="flex flex-col items-center justify-center w-full md:w-full  relative z-10">
 
           {/* FOTO CORAZÓN */}
           <div className="relative w-full flex justify-center">
@@ -50,8 +50,8 @@ export default function Home() {
               fetchPriority="high"   // Prioridad alta sobre otras cosas (como la playlist)
               className="
       /* 1. Posición y Tamaño (Tus clases base) */
-      relative z-20 
-      w-[90%] max-w-[500px] md:w-[500px] lg:max-w-[700px] 
+      relative z-20 translate-x-[2%]
+      w-[140%] max-w-[500px] md:w-[500px] lg:max-w-[700px] 
       object-contain
       pointer-events-none select-none
 
@@ -59,7 +59,7 @@ export default function Home() {
       animate-in 
       fade-in 
       zoom-in-75       /* Empieza al 75% del tamaño y crece */
-      duration-[1500ms] /* Tarda 1.5 segundos (más lento es más elegante) */
+      duration-[3000ms] /* Tarda 3 segundos (más lento es más elegante) */
       ease-out          /* Frena al final */
       
       /* 3. Opacidad Final */
@@ -79,7 +79,7 @@ export default function Home() {
               animate-in 
               fade-in 
               slide-in-from-bottom-4 /* Sube un poquito (16px) */
-              duration-1000          /* Tarda 1 segundo */
+              duration-2000          /* Tarda 2 segundos */
               ease-out
             ">
               Te invitamos a nuestra boda!
@@ -94,8 +94,8 @@ export default function Home() {
               fade-in 
               slide-in-from-bottom-8 /* Sube más recorrido (32px) para dar imponencia */
               zoom-in-95
-              duration-1000 
-              delay-300              /* ESPERA 0.3s antes de empezar (Clave del efecto) */
+              duration-2000 
+              delay-600              /* ESPERA 0.6s antes de empezar (Clave del efecto) */
               ease-out
             ">
               Carli & Nicolás!
@@ -113,42 +113,65 @@ export default function Home() {
       </FloralSectionTop>
 
 
-      {/* Reproducto y fecha */}
-      <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+      {/* =========================================================
+          SECCIÓN: REPRODUCTOR Y FECHA
+          (Estrategia: Diseño Móvil Centrado -> Escalado para Notebook)
+      ========================================================= */}
+      <div className="flex flex-col items-center justify-center w-full relative z-10 
+        mt-10      /* Celular: Margen estándar */
+        md:mt-20   /* Notebook: MUCHO más aire para elegancia */
+      ">
 
-
-        {/* BLOQUE 2: El Texto y Reproductor (La otra mitad) */}
-        <div className="space-y-6 max-w-lg mx-auto lg:mx-0 lg:w-1/2 z-10 flex flex-col items-center lg:items-start">
-          {/* ^^^ MAGIA 3: lg:items-start (alinea elementos a la izquierda en PC) */}
-
-          <div className="w-full max-w-xs"> {/* Contenedor para limitar ancho del player */}
+        {/* Contenedor Principal: Siempre centrado, nunca en columnas laterales */}
+        <div className="space-y-8 w-full max-w-lg md:max-w-2xl mx-auto z-10 flex flex-col items-center">
+          
+          {/* REPRODUCTOR DE MÚSICA */}
+          <div className="w-full max-w-xs md:max-w-md transition-all duration-300"> 
+             {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
             <MusicPlayer />
           </div>
 
-          <div className="space-y-2 mt-8 w-full">
-            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide text-center">
+          {/* TEXTO DE INVITACIÓN */}
+          <div className="space-y-4 mt-8 w-full text-center px-4">
+            <p className="text-lg md:text-2xl text-muted-foreground font-light tracking-wide">
               Te invitamos a celebrar nuestro matrimonio el día
             </p>
 
-            {/* Fecha: En PC la mantenemos centrada respecto a sí misma o la alineamos izquierda según gusto */}
-            <div className="flex flex-col items-center lg:items-center">
-              <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Mayo</span>
+            {/* BLOQUE DE FECHA */}
+            <div className="flex flex-col items-center">
+              <span className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-3">
+                Mayo
+              </span>
 
-              {/* Caja de la fecha */}
-              <div className="flex items-center gap-4 md:gap-8 border-y border-primary/30 py-4 px-8 md:px-12">
-                <span className="text-sm md:text-base uppercase tracking-widest">Viernes</span>
-                <span className="text-6xl md:text-7xl font-serif font-bold text-primary">29</span>
-                <span className="text-sm md:text-base uppercase tracking-widest">18:00 Hrs</span>
+              {/* CAJA DE FECHA: Más grande en PC */}
+              <div className="
+                flex items-center gap-4 md:gap-12 
+                border-y border-primary/30 
+                py-4 px-8       /* Celular */
+                md:py-8 md:px-16 /* Notebook: Más 'gordo' y espacioso */
+                backdrop-blur-sm
+              ">
+                <span className="text-sm md:text-xl uppercase tracking-widest">Viernes</span>
+                
+                {/* El número 29 gigante */}
+                <span className="text-6xl md:text-8xl font-serif font-bold text-primary">
+                  29
+                </span>
+                
+                <span className="text-sm md:text-xl uppercase tracking-widest">18:00 Hrs</span>
               </div>
 
-              <span className="text-sm uppercase tracking-[0.3em] text-muted-foreground mt-2">2026</span>
+              <span className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mt-3">
+                2026
+              </span>
             </div>
           </div>
         </div>
+
+        {/* Separador inferior ajustado */}
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
       </div>
-
 
 
       {/* Cuenta Regresiva */}

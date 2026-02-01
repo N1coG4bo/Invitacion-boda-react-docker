@@ -13,52 +13,55 @@ export function FloralSectionTop({ children, className, withDivider = false }: F
 // 1. ESTRUCTURA:
       // min-h-[85dvh]: Ocupa el 85% de la pantalla del celular SIEMPRE.
       // Esto empuja la playlist hacia abajo inmediatamente.
-      "relative pt-16 md:pt-24 pb-0 overflow-hidden flex flex-col justify-center", className
-    )}>
+"relative pt-32 md:pt-40 pb-10 overflow-hidden flex flex-col justify-center min-h-[92dvh]",    )}>
 
 
   <img
-        src="/images/banner-25-01-canva.webp"
-        alt="Decoración floral esquina superior izquierda"
-        className="
-          /* 📱 1. MÓVIL (SAGRADO - NO TOCAR) */
-          absolute z-20
-          top-[-3px] 
-          left-1/2 -translate-x-1/2
-          w-[395px] max-w-none
-          
-          /* 💻 2. PC / NOTEBOOK (SOLUCIÓN DEL CORTE) */
-          md:relative 
-          md:left-auto md:translate-x-0
-          
-          /* Aumentamos la altura del contenedor */
-          md:w-full 
-          md:h-[500px]
-          md:object-cover
+  src="/images/banner-25-01-canva.webp"
+  alt="Decoración floral superior"
+  className="
+    /* ==============================================
+       📱 1. MÓVIL (TU VERSIÓN SAGRADA)
+       ============================================== */
+    absolute z-20
+    top-[-3px] 
+    left-1/2 -translate-x-1/2
+    w-[395px] max-w-none
 
-          /* 🔥 EL TRUCO DEL ZOOM: */
-          md:scale-[1.25] 
-          md:origin-top
+    /* ==============================================
+       💻 2. NOTEBOOK / PC (LA 'ESTRATEGIA CELULAR')
+       ============================================== */
+    /* 1. Lo volvemos 'absolute' para que NO empuje el contenido (igual que en móvil) */
+    md:absolute
+    
+    /* 2. Lo pegamos al techo, ajustando un poco para que respire */
+    md:top-[-20px] 
+    md:left-1/2 md:-translate-x-1/2
+    
+    /* 3. DIMENSIONES CONTROLADAS (Art Direction) */
+    /* En vez de w-full (que estira infinito), le damos un ancho 'lógico' para notebook */
+    md:w-full 
+    md:max-w-[1200px]   /* Tope máximo para que no se vea gigante en pantallas anchas */
+    md:h-[500px]        /* Altura fija para encuadrar bien las flores */
+    md:object-cover     /* Recorte inteligente si sobra espacio */
 
-          /* AJUSTE VERTICAL */
-          md:-mt-[100px]
-          
-          /* IMÁN INFERIOR */
-          md:-mb-[300px]
+    /* 4. Limpieza: Eliminamos márgenes negativos y escalas raras */
+    md:m-0 
+    md:scale-100
 
-          opacity-100 pointer-events-none select-none
-
-          /* ✨ NUEVA ANIMACIÓN: CAÍDA DESDE ARRIBA ✨ */
-          animate-in 
-          slide-in-from-top-10  /* Empieza arriba y baja suavemente */
-          fade-in               /* Aparece progresivamente */
-          duration-[1500ms]     /* Tarda 1.5 segundos en bajar */
-          ease-out              /* Frena suavemente al llegar */
-        "
-        /* AGREGAR ESTO AL BANNER PARA QUE CARGUE RÁPIDO: */
-         loading="eager"
-         fetchPriority="high"
-      />
+    /* ==============================================
+       ✨ ANIMACIONES Y PROPIEDADES COMUNES
+       ============================================== */
+    opacity-100 pointer-events-none select-none
+    animate-in 
+    slide-in-from-top-10
+    fade-in
+    duration-[3000ms]
+    ease-out
+  "
+  loading="eager"
+  fetchPriority="high"
+/>
 
 
       <div className="container relative z-10">

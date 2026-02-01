@@ -12,7 +12,7 @@ export function FloralSeparator({ className }: FloralSeparatorProps) {
       className={cn(
         // --- CLASES BASE ---
         "relative z-20 pointer-events-none select-none",
-        "w-[300px] md:w-[400px] lg:w-[600px]",
+        "w-[100%] md:w-[400px] lg:w-[600px]",
         "opacity-60",
 
         // --- CLASES VARIABLES ---
