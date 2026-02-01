@@ -80,6 +80,7 @@ export default function Home() {
               fade-in 
               slide-in-from-bottom-4 /* Sube un poquito (16px) */
               duration-2000          /* Tarda 2 segundos */
+              delay-2000              /* Empieza después de 2 segundos (justo cuando termina la foto) */
               ease-out
             ">
               Te invitamos a nuestra boda!
@@ -95,7 +96,7 @@ export default function Home() {
               slide-in-from-bottom-8 /* Sube más recorrido (32px) para dar imponencia */
               zoom-in-95
               duration-2000 
-              delay-600              /* ESPERA 0.6s antes de empezar (Clave del efecto) */
+              delay-2000              /* ESPERA 0.6s antes de empezar (Clave del efecto) */
               ease-out
             ">
               Carli & Nicolás!
@@ -107,6 +108,7 @@ export default function Home() {
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
           */}
           <FloralSeparator className="-mt-4 md:-mt-8" />
+
 
         </div>
 
