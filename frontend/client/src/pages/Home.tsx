@@ -72,7 +72,9 @@ export default function Home() {
           <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24">
             
             {/* 1. SUBTÍTULO: Entrada suave y rápida */}
-            <h2 className="
+            <h2
+              style={{ animationFillMode: 'both' }} /* <--- ¡ESTA ES LA CURITA MÁGICA! 🩹 */ 
+              className="
               text-[30px] md:text-3xl font-script text-foreground drop-shadow-md
               
               /* ANIMACIÓN */
@@ -80,14 +82,16 @@ export default function Home() {
               fade-in 
               slide-in-from-bottom-4 /* Sube un poquito (16px) */
               duration-2000          /* Tarda 2 segundos */
-              delay-2000              /* Empieza después de 2 segundos (justo cuando termina la foto) */
+              delay-1000              /* Empieza después de 2 segundos (justo cuando termina la foto) */
               ease-out
             ">
               Te invitamos a nuestra boda!
             </h2>
             
             {/* 2. NOMBRES: Entrada con retraso (Delay) para el efecto escalonado */}
-            <h1 className="
+            <h1
+              style={{ animationFillMode: 'both' }} /* <--- ¡ESTA ES LA CURITA MÁGICA! 🩹 */
+              className="
               text-[50px] md:text-7xl font-script text-foreground drop-shadow-lg leading-tight
               
               /* ANIMACIÓN */
@@ -96,7 +100,7 @@ export default function Home() {
               slide-in-from-bottom-8 /* Sube más recorrido (32px) para dar imponencia */
               zoom-in-95
               duration-2000 
-              delay-2000              /* ESPERA 0.6s antes de empezar (Clave del efecto) */
+              delay-1000              /* ESPERA 0.6s antes de empezar (Clave del efecto) */
               ease-out
             ">
               Carli & Nicolás!
