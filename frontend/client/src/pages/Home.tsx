@@ -291,18 +291,43 @@ export default function Home() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
         </p>
 
-        <Card className="border-none shadow-lg backdrop-blur">
-          <CardContent className="p-8 space-y-4 text-left md:text-center">
-            <h3 className="text-xl font-serif font-bold text-center mb-6 tracking-widest uppercase border-b pb-4">Datos de Transferencia</h3>
-            <div className="space-y-2 text-sm md:text-base font-mono text-muted-foreground">
-              <p><strong className="text-foreground">NOMBRE:</strong> Nicolás Lagos</p>
-              <p><strong className="text-foreground">RUT:</strong> 12.345.678-9</p>
-              <p><strong className="text-foreground">CUENTA:</strong> Vista</p>
-              <p><strong className="text-foreground">BANCO:</strong> Banco de Chile</p>
-              <p><strong className="text-foreground">MAIL:</strong> novios@ejemplo.com</p>
-            </div>
-          </CardContent>
-        </Card>
+{/* --- INICIO BOTÓN IMAGEN LISTA DE NOVIOS (LIMPIO) --- */}
+<div className="flex flex-col items-center justify-center gap-4 mt-8 w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 z-10 relative">
+  
+  <p className="text-muted-foreground text-center italic">
+    También puedes revisar nuestra lista oficial aquí:
+  </p>
+
+  <a 
+    href="https://milistadenovios.cl/enviar-regalo?id=34089" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    /* QUITAMOS TODAS LAS CLASES DE CAJA, SOMBRA Y BORDE AQUÍ */
+    className="
+      inline-block 
+      transition-transform hover:scale-105 /* Mantenemos solo el efecto de crecer un poquito */
+      group /* Necesario para efectos en hijos */
+    "
+  >
+    {/* TU IMAGEN PURA Y DURA */}
+    <img 
+      src="/images/btn-milistadenovios-squoosh.webp" 
+      alt="Botón Ver Lista de Novios"
+      /* QUITAMOS max-h POR AHORA para que tome su tamaño real. Ajusta si es necesario. */
+      className="
+        w-auto h-auto object-contain 
+        pointer-events-auto cursor-pointer
+        /* Opcional: Agregar una sombra suave que respete la forma de la imagen, no la caja */
+        hover:drop-shadow-lg transition-all
+      "
+    />
+  </a>
+</div>
+{/* --- FIN BOTÓN IMAGEN LISTA DE NOVIOS (LIMPIO) --- */}
+
+
+{/* /images/btn-milistadenovios-squoosh.webp */}
+
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
       </div>
