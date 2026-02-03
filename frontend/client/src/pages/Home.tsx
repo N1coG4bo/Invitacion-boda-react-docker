@@ -291,43 +291,54 @@ export default function Home() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
         </p>
 
-{/* --- INICIO BOTÓN IMAGEN LISTA DE NOVIOS (LIMPIO) --- */}
-<div className="flex flex-col items-center justify-center gap-4 mt-8 w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 z-10 relative">
-  
-  <p className="text-muted-foreground text-center italic">
-    También puedes revisar nuestra lista oficial aquí:
-  </p>
+{/* --- INICIO BLOQUE REGALOS (TÉCNICA WHATSAPP) --- */}
+        <div className="w-full flex flex-col items-center mt-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          
+          <p className="text-muted-foreground text-center italic mb-4">
+            También puedes revisar nuestras listas oficiales aquí:
+          </p>
 
-  <a 
-    href="https://milistadenovios.cl/enviar-regalo?id=34089" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    /* QUITAMOS TODAS LAS CLASES DE CAJA, SOMBRA Y BORDE AQUÍ */
-    className="
-      inline-block 
-      transition-transform hover:scale-105 /* Mantenemos solo el efecto de crecer un poquito */
-      group /* Necesario para efectos en hijos */
-    "
-  >
-    {/* TU IMAGEN PURA Y DURA */}
-    <img 
-      src="/images/btn-milistadenovios-squoosh.webp" 
-      alt="Botón Ver Lista de Novios"
-      /* QUITAMOS max-h POR AHORA para que tome su tamaño real. Ajusta si es necesario. */
-      className="
-        w-auto h-auto object-contain 
-        pointer-events-auto cursor-pointer
-        /* Opcional: Agregar una sombra suave que respete la forma de la imagen, no la caja */
-        hover:drop-shadow-lg transition-all
-      "
-    />
-  </a>
-</div>
-{/* --- FIN BOTÓN IMAGEN LISTA DE NOVIOS (LIMPIO) --- */}
+          {/* CONTENEDOR PADRE (IGUAL QUE WHATSAPP) 
+              Usamos 'flex-col' para que queden uno abajo del otro.
+              Si los quisieras lado a lado en PC, cambiarías a 'md:flex-row'.
+          */}
+          <div className="flex flex-col gap-4 justify-center items-center w-full">
 
+            {/* BOTÓN 1: MI LISTA DE NOVIOS */}
+            <a
+              href="https://milistadenovios.cl/enviar-regalo?id=34089"
+              target="_blank"
+              rel="noopener noreferrer"
+              /* CLASES CLAVE:
+                 1. 'flex justify-center': Convierte el link en una caja que centra lo que tiene dentro.
+                 2. 'w-full md:w-auto': En celular ocupa todo el ancho, en PC solo lo necesario.
+              */
+              className="flex justify-center w-[140%] max-w-[500px] md:w-auto transition-transform hover:scale-105 hover:-translate-y-1"
+            >
+              <img 
+                src="/images/btn-milistadenovios-squoosh.webp" 
+                alt="Botón Ver Lista de Novios"
+                className="w-[240px] h-auto object-contain drop-shadow-lg cursor-pointer"
+              />
+            </a>
 
-{/* /images/btn-milistadenovios-squoosh.webp */}
+            {/* BOTÓN 2: FALABELLA */}
+            <a
+              href="https://novios.falabella.com/info-evento/evento?codigoEvento=2103572"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center w-full md:w-auto transition-transform hover:scale-105 hover:-translate-y-1"
+            >
+              <img 
+                src="/images/btn-falabella-canva-squoosh.webp" 
+                alt="Botón Falabella Novios"
+                className="w-[240px] h-auto object-contain drop-shadow-lg cursor-pointer"
+              />
+            </a>
 
+          </div>
+        </div>
+        {/* --- FIN BLOQUE REGALOS --- */}
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
       </div>
