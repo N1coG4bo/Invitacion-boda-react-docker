@@ -36,13 +36,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <FloralSectionTop className="relative delay-2000">
+      <FloralSectionTop className="relative delay-4000">
 
         {/* Contenedor Flexible */}
-        <div className="flex flex-col items-center justify-center w-full md:w-full  relative z-10">
+        <div className="flex flex-col items-center justify-center w-full md:w-full  relative z-10 delay-4000">
 
           {/* FOTO CORAZÓN */}
-          <div className="relative w-full flex justify-center delay-300">
+          <div className="relative w-full flex justify-center">
             <img
               src="/images/marco-corazon-nico-carli.webp"
               alt="Nicolás y Carli bajo el arco floral"
@@ -69,7 +69,7 @@ export default function Home() {
           </div>
 
          {/* TEXTO */}
-          <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24 delay-300">
+          <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24">
             
             {/* 1. SUBTÍTULO: Entrada suave y rápida */}
             <h2
@@ -111,7 +111,7 @@ export default function Home() {
               Aquí solo ajustas el margen específico para esta pantalla.
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
           */}
-          <FloralSeparator className="-mt-4 md:-mt-8 delay-2000" />
+          <FloralSeparator className="-mt-4 md:-mt-8 delay-4000" />
 
 
         </div>
