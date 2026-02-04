@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <FloralSectionTop className="relative delay-300">
+      <FloralSectionTop className="relative delay-2000">
 
         {/* Contenedor Flexible */}
         <div className="flex flex-col items-center justify-center w-full md:w-full  relative z-10">
@@ -49,22 +49,22 @@ export default function Home() {
               loading="eager"        // ¡Carga inmediata!
               fetchPriority="high"   // Prioridad alta sobre otras cosas (como la playlist)
               className="
-      /* 1. Posición y Tamaño (Tus clases base) */
-      relative z-20 translate-x-[2%]
-      w-[140%] max-w-[500px] md:w-[500px] lg:max-w-[700px] 
-      object-contain
-      pointer-events-none select-none
+              /* 1. Posición y Tamaño (Tus clases base) */
+              relative z-20 translate-x-[2%]
+              w-[140%] max-w-[500px] md:w-[500px] lg:max-w-[700px] 
+              object-contain
+              pointer-events-none select-none
 
-      /* 2. EFECTO SPRAY (Aparición) 💨 */
-      animate-in 
-      fade-in 
-      zoom-in-75       /* Empieza al 75% del tamaño y crece */
-      duration-[3000ms] /* Tarda 3 segundos (más lento es más elegante) */
-      ease-out          /* Frena al final */
-      
-      /* 3. Opacidad Final */
-      opacity-90 
-    "
+              /* 2. EFECTO SPRAY (Aparición) 💨 */
+              animate-in 
+              fade-in 
+              zoom-in-75       /* Empieza al 75% del tamaño y crece */
+              duration-[3000ms] /* Tarda 3 segundos (más lento es más elegante) */
+              ease-out          /* Frena al final */
+              
+              /* 3. Opacidad Final */
+              opacity-90 
+            "
             />
           </div>
 
@@ -111,7 +111,7 @@ export default function Home() {
               Aquí solo ajustas el margen específico para esta pantalla.
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
           */}
-          <FloralSeparator className="-mt-4 md:-mt-8" />
+          <FloralSeparator className="-mt-4 md:-mt-8 delay-2000" />
 
 
         </div>
@@ -126,7 +126,8 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center w-full relative z-10 
         mt-10      /* Celular: Margen estándar */
         md:mt-20   /* Notebook: MUCHO más aire para elegancia */
-      ">
+        delay-2000
+        ">
 
         {/* Contenedor Principal: Siempre centrado, nunca en columnas laterales */}
         <div className="space-y-8 w-full max-w-lg md:max-w-2xl mx-auto z-10 flex flex-col items-center">
