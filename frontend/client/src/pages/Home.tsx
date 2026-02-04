@@ -36,13 +36,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <FloralSectionTop className="relative">
+      <FloralSectionTop className="relative delay-300">
 
         {/* Contenedor Flexible */}
         <div className="flex flex-col items-center justify-center w-full md:w-full  relative z-10">
 
           {/* FOTO CORAZÓN */}
-          <div className="relative w-full flex justify-center">
+          <div className="relative w-full flex justify-center delay-300">
             <img
               src="/images/marco-corazon-nico-carli.webp"
               alt="Nicolás y Carli bajo el arco floral"
@@ -69,7 +69,7 @@ export default function Home() {
           </div>
 
          {/* TEXTO */}
-          <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24">
+          <div className="space-y-2 text-center relative z-30 -mt-12 md:-mt-24 delay-300">
             
             {/* 1. SUBTÍTULO: Entrada suave y rápida */}
             <h2
