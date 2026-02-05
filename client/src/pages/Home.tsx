@@ -13,7 +13,7 @@ export default function Home() {
   const weddingDate = "2026-05-29T18:00:00";
 
   const timelineEvents = [
-    { time: "4:00 PM", title: "Ceremonia", icon: CheckCircle2 }, // Icono genérico, idealmente anillos
+    { time: "6:00 PM", title: "Ceremonia", icon: CheckCircle2 }, // Icono genérico, idealmente anillos
     { time: "5:00 PM", title: "Fotografía", icon: Camera },
     { time: "6:00 PM", title: "Cocktail", icon: Wine },
     { time: "7:00 PM", title: "Cena", icon: Utensils },
@@ -221,7 +221,6 @@ export default function Home() {
 
       {/* Itinerario */}
       <div className="relative">
-        <Hojas className="" />
         <h2 className="text-4xl font-serif text-center mb-12 mt-5">Itinerario</h2>
         <Timeline events={timelineEvents} />
         <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
@@ -265,10 +264,6 @@ export default function Home() {
           </Button>
 
         </div>
-
-        <p className="text-sm text-muted-foreground italic mt-4">
-          (Al hacer clic se abrirá tu WhatsApp con el mensaje listo)
-        </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
       </div>
 
@@ -276,7 +271,7 @@ export default function Home() {
       <div className="text-center max-w-xl mx-auto space-y-6 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
         <h2 className="text-5xl font-script mb-8">Dress code</h2>
         <div className="flex justify-center mb-6">
-          <Shirt className="w-16 h-16 text-primary opacity-80" strokeWidth={1} />
+          <img src="/images/vestuario.webp" alt="Dress Code" className="w-[30%] h-auto" />
         </div>
         <p className="text-lg text-muted-foreground">
           Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
