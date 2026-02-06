@@ -275,7 +275,7 @@ export default function Home() {
           <img src="/images/vestuario.webp" alt="Dress Code" className="w-[30%] h-auto" />
         </div>
         <p className="text-lg text-muted-foreground">
-          Ropa formal elegante. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
+          Se reserva el celeste pastel para el novio y blanco para la novia. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
         </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
