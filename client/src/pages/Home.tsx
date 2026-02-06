@@ -274,7 +274,7 @@ export default function Home() {
           <img src="/images/vestuario.webp" alt="Dress Code" className="w-[30%] h-auto" />
         </div>
         <p className="text-lg text-muted-foreground">
-          Todos los tonos son bienvenidos, excepto el blanco, reservado para los novios.
+          Ropa formal elegante. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
         </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
@@ -284,15 +284,12 @@ export default function Home() {
       <div className="text-center max-w-xl mx-auto space-y-8 flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
         <h2 className="text-5xl font-script">Regalo</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque at nam id ab cum quae ullam fugiat. Deleniti alias optio quidem tempore itaque beatae veniam illum ea minus dicta! PONER MENSAJE DE REGALO UWU.
+          Tu presencia en nuestro día especial es el mejor regalo que podríamos pedir. Sin embargo, si deseas hacernos un obsequio, tenemos estas listas de novios disponibles
         </p>
 
 {/* --- INICIO BLOQUE REGALOS (TÉCNICA WHATSAPP) --- */}
         <div className="w-full flex flex-col items-center mt-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           
-          <p className="text-muted-foreground text-center italic mb-4">
-            También puedes revisar nuestras listas oficiales aquí:
-          </p>
 
           {/* CONTENEDOR PADRE (IGUAL QUE WHATSAPP) 
               Usamos 'flex-col' para que queden uno abajo del otro.
@@ -335,6 +332,9 @@ export default function Home() {
           </div>
         </div>
         {/* --- FIN BLOQUE REGALOS --- */}
+          <p>
+            Si no sabes en que lista de novios regalar, envíanos un mensaje y te ayudamos con mucho gusto.
+          </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
       </div>
