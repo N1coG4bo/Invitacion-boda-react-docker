@@ -111,7 +111,7 @@ export default function Home() {
               Aquí solo ajustas el margen específico para esta pantalla.
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
           */}
-          <FloralSeparator className="-mt-4 md:-mt-8 delay-4000" />
+          <FloralSeparator className="-mt-4 md:-mt-8" />
 
 
         </div>
@@ -168,7 +168,7 @@ export default function Home() {
                 <span className="text-sm md:text-xl uppercase tracking-widest">18:00 Hrs</span>
               </div>
 
-              <span className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mt-3">
+              <span className="text-sm mb-10 md:text-base uppercase tracking-[0.3em] text-muted-foreground mt-3">
                 2026
               </span>
             </div>
@@ -188,36 +188,37 @@ export default function Home() {
         <FloralSeparator className="-mt-4 md:-mt-8" />
       </div>
 
-      {/* Ubicación */}
+     {/* Ubicación */}
       <div className="space-y-16 text-center max-w-2xl mx-auto flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
+        
         {/* Recepción */}
         <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-100">
-          <h2 className="text-5xl font-script text-foreground">Recepción</h2>
+          <h2 className="text-5xl font-script text-foreground">Recepción & Fiesta</h2>
           <div className="space-y-1">
-            <p className="text-lg font-medium">Ingrese_Direccióin</p>
-            <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
+            <p className="text-lg font-medium">Iglesia de Jesucristo de los Santos de lo Últimos Días</p> {/* Ejemplo */}
+            <p className="text-muted-foreground">Domingo Tocornal 899, 8167379 Puente Alto, Región Metropolitana</p>
           </div>
-          <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
-            <MapPin className="w-4 h-4 mr-2" />
-            Ubicación
-          </Button>
+          
+          {/* ENLACE A GOOGLE MAPS PARA LA RECEPCIÓN */}
+          <a 
+            href="https://maps.app.goo.gl/Vdwexg6dK7dyf6G49" // <--- PEGA AQUÍ EL LINK DE LA IGLESIA
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block" // Para que no rompa el diseño flex
+          >
+            <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
+              <MapPin className="w-4 h-4 mr-2" />
+              Ver Mapa
+            </Button>
+          </a>
         </div>
+        
+  
+  <FloralSeparator className="-mt-4 md:-mt-8" />
+</div>
 
-        {/* Fiesta */}
-        <div className="space-y-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
-          <h2 className="text-5xl font-script text-foreground">Fiesta</h2>
-          <div className="space-y-1">
-            <p className="text-lg font-medium">Ingrese_capilla</p>
-            <p className="text-muted-foreground">Ingrese_region Ingrese_hora_00:00</p>
-          </div>
-          <Button className="mt-4 bg-[#D4C4A8] hover:bg-[#C4B498] text-white rounded-full px-8 tracking-widest uppercase text-xs font-bold shadow-md transition-all hover:shadow-lg">
-            <MapPin className="w-4 h-4 mr-2" />
-            Ubicación
-          </Button>
-        </div>
-        <FloralSeparator className="-mt-4 md:-mt-8" />
 
-      </div>
+
 
       {/* Itinerario */}
       <div className="relative">
@@ -306,16 +307,31 @@ export default function Home() {
                  1. 'flex justify-center': Convierte el link en una caja que centra lo que tiene dentro.
                  2. 'w-full md:w-auto': En celular ocupa todo el ancho, en PC solo lo necesario.
               */
-              className="flex justify-center w-[140%] max-w-[500px] md:w-auto transition-transform hover:scale-105 hover:-translate-y-1"
+              className="flex justify-center max-w-[500px] md:w-auto transition-transform hover:scale-105 hover:-translate-y-1"
             >
               <img 
                 src="/images/btn-milistadenovios-squoosh.webp" 
                 alt="Botón Ver Lista de Novios"
-                className="w-[240px] h-auto object-contain drop-shadow-lg cursor-pointer"
+                className="w-[90%] h-auto object-contain drop-shadow-lg cursor-pointer"
+              />
+            </a>
+
+                        {/* BOTÓN 2: PARIS */}
+            <a
+              href="https://club.noviosparis.cl/home/couple-catalog/19240568"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center w-full md:w-auto transition-transform hover:scale-105 hover:-translate-y-1"
+            >
+              <img 
+                src="/images/novios-paris.webp" 
+                alt="Botón Paris Novios"
+                className="w-[90%] h-auto object-contain drop-shadow-lg cursor-pointer"
               />
             </a>
 
             {/* BOTÓN 2: FALABELLA */}
+            {/*   
             <a
               href="https://novios.falabella.com/info-evento/evento?codigoEvento=2103572"
               target="_blank"
@@ -325,10 +341,12 @@ export default function Home() {
               <img 
                 src="/images/btn-falabella-canva-squoosh.webp" 
                 alt="Botón Falabella Novios"
-                className="w-[240px] h-auto object-contain drop-shadow-lg cursor-pointer"
+                className="w-[100%] h-auto object-contain drop-shadow-lg cursor-pointer"
               />
             </a>
 
+            */}
+            
           </div>
         </div>
         {/* --- FIN BLOQUE REGALOS --- */}
