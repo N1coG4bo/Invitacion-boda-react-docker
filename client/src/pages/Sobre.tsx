@@ -1,4 +1,5 @@
 import { FloralSectionTop } from '@/components/FloralSectionTop';
+import { Enredadera } from '@/components/flowers/Enredadera';
 import { RamoFlores } from '@/components/flowers/RamosFlores'; // Asumo la ruta
 import React from 'react';
 import { useLocation } from "wouter";
@@ -7,10 +8,12 @@ export default function Sobre() {
     const [, setLocation] = useLocation();
 
     const abrirInvitacion = () => {
-        setLocation("/"); 
+        setLocation("/invitacion"); 
     };
 
     return (
+
+
         // CONTENEDOR PRINCIPAL
         // Añadimos 'overflow-hidden' para que si las flores son muy grandes no generen scroll
         <div className="min-h-screen bg-background overflow-hidden relative w-full h-full">
@@ -45,11 +48,16 @@ export default function Sobre() {
                     <h1 className="text-4xl md:text-6xl font-script text-foreground drop-shadow-sm">
                         Invitación Especial
                     </h1>
+
+                    <h1 className="text-2xl md:text-4xl font-script text-foreground drop-shadow-sm">
+                        Carla Pizarro & Nicolás Lagos
+                    </h1>
+                    
                 </div>
 
                 {/* 2. EL SOBRE */}
                 <div 
-                    className="relative w-full max-w-[500px] flex justify-center cursor-pointer group my-4" 
+                    className="relative w-full max-w-[500px] flex justify-center cursor-pointer group" 
                     onClick={abrirInvitacion}
                 >
                     <img
@@ -69,9 +77,6 @@ export default function Sobre() {
                 {/* 3. TEXTO INFERIOR */}
                 {/* Quité el 'mb-8' que tenías, porque empujaba todo hacia arriba innecesariamente */}
                 <div className="mt-6 text-center space-y-2 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
-                    <h1 className="text-3xl md:text-5xl font-script text-foreground drop-shadow-sm px-4">
-                        Veintinueve de Mayo del Dos Mil Veintiseis
-                    </h1>
                     <p className="text-sm md:text-base text-muted-foreground/80 pt-2 animate-pulse">
                         (Toca el sobre para abrir)
                     </p>
@@ -79,5 +84,6 @@ export default function Sobre() {
 
             </div>
         </div>
+       
     );
 }
