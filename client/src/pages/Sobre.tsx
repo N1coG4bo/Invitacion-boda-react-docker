@@ -77,12 +77,6 @@ export default function Sobre() {
                     </p>
                 </div>
 
-                {/* REPRODUCTOR DE MÚSICA */}
-                <div className="w-full max-w-xs md:max-w-md transition-all duration-300 mt-5"> 
-                    {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
-                    <MusicPlayer />
-                </div>
-
             </div>
         </div>
        

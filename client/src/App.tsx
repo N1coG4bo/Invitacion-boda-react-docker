@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
+import { MusicPlayer } from "./components/MusicPlayer";
 
 
 function Router() {
@@ -35,6 +36,15 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          
+          {/* 2. REPRODUCTOR GLOBAL: 
+             Lo colocamos aquí, fijo en la pantalla y fuera del Router.
+             z-50 asegura que esté por encima de todo (incluso de las flores).
+          */}
+          <div className="w-[50%] fixed bottom-0 z-50 justify-center">
+            <MusicPlayer />
+          </div>
+
           <Router />
         </TooltipProvider>
       </ThemeProvider>
