@@ -5,10 +5,9 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 import { Timeline } from "@/components/Timeline";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2, MessageCircle } from "lucide-react";
 import { FloralSeparator } from "@/components/flowers/FloralSeparator";
 import { Hojas } from "@/components/flowers/Hojas";
-
+import { Camera, Utensils, Wine, Cake, Music, MapPin, Gift, Shirt, CheckCircle2, MessageCircle } from "lucide-react";
 export default function Home() {
   const weddingDate = "2026-05-29T18:00:00";
 
@@ -131,12 +130,7 @@ export default function Home() {
 
         {/* Contenedor Principal: Siempre centrado, nunca en columnas laterales */}
         <div className="space-y-8 w-full max-w-lg md:max-w-2xl mx-auto z-10 flex flex-col items-center">
-          
-          {/* REPRODUCTOR DE MÚSICA */}
-          <div className="w-full max-w-xs md:max-w-md transition-all duration-300"> 
-             {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
-            <MusicPlayer />
-          </div>
+        
 
           {/* TEXTO DE INVITACIÓN */}
           <div className="space-y-4 mt-8 w-full text-center px-4">

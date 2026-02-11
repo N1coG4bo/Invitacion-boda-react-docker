@@ -69,7 +69,7 @@ export function MusicPlayer() {
 
   return (
     <div className="w-full max-w-md mx-auto bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-primary/10">
-      <h3 className="text-center font-bold text-lg mb-6">¡DALE PLAY A NUESTRA CANCIÓN!</h3>
+      <h3 className="text-center font-bold text-lg mb-6">¡Y DALE PLAY A NUESTRA CANCIÓN!</h3>
       
       <div className="space-y-4">
         {/* Barra de progreso */}
@@ -97,6 +97,8 @@ export function MusicPlayer() {
             {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-1" />}
           </Button>
         </div>
+
+
       </div>
     </div>
   );

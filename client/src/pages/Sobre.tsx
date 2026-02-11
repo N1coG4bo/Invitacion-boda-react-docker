@@ -3,6 +3,7 @@ import { Enredadera } from '@/components/flowers/Enredadera';
 import { RamoFlores } from '@/components/flowers/RamosFlores'; // Asumo la ruta
 import React from 'react';
 import { useLocation } from "wouter";
+import { MusicPlayer } from '@/components/MusicPlayer'; 
 
 export default function Sobre() {
     const [, setLocation] = useLocation();
@@ -26,18 +27,12 @@ export default function Sobre() {
                 <FloralSectionTop />
             </div> */}
 
-            {/* Flores ABAJO - Usamos 'absolute' para pegarlas al fondo */}
-            <div className="absolute bottom-0 left-0 w-full flex justify-center z-0 pointer-events-none">
-                {/* - pointer-events-none: Para que si tapan el sobre, el click siga funcionando.
-                   - translate-y: Puedes jugar con esto para esconderlas un poco si son muy altas.
-                */}
-                <RamoFlores className="opacity-80 md:opacity-100 translate-y-10 md:translate-y-0" />
-            </div>
+
 
 
             {/* --- CAPA 2: CONTENIDO PRINCIPAL (Flex) --- */}
             {/* Este div ocupa toda la pantalla y centra el contenido ENCIMA de las flores */}
-            <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 pb-20"> 
+            <div className="relative z-10 min-h-screen flex flex-col items-center justify-start p-4 pb-20"> 
                 {/* pb-20 (Padding Bottom) extra para que el texto no choque con las flores del fondo */}
 
                 {/* 1. TEXTO SUPERIOR */}
@@ -80,6 +75,12 @@ export default function Sobre() {
                     <p className="text-sm md:text-base text-muted-foreground/80 pt-2 animate-pulse">
                         (Toca el sobre para abrir)
                     </p>
+                </div>
+
+                {/* REPRODUCTOR DE MÚSICA */}
+                <div className="w-full max-w-xs md:max-w-md transition-all duration-300 mt-5"> 
+                    {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
+                    <MusicPlayer />
                 </div>
 
             </div>
