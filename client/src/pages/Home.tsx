@@ -122,11 +122,17 @@ export default function Home() {
           SECCIÓN: REPRODUCTOR Y FECHA
           (Estrategia: Diseño Móvil Centrado -> Escalado para Notebook)
       ========================================================= */}
-      <div className="flex flex-col items-center justify-center w-full relative z-10 
-        mt-10      /* Celular: Margen estándar */
+
+      <div className="flex flex-col items-center justify-start w-full relative z-10 
+        mt-1      /* Celular: Margen estándar */
         md:mt-20   /* Notebook: MUCHO más aire para elegancia */
         delay-2000
         ">
+                {/* REPRODUCTOR DE MÚSICA */}
+        <div className="w-full max-w-xs md:max-w-md transition-all duration-300 mt-5"> 
+            {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
+            <MusicPlayer />
+        </div>
 
         {/* Contenedor Principal: Siempre centrado, nunca en columnas laterales */}
         <div className="space-y-8 w-full max-w-lg md:max-w-2xl mx-auto z-10 flex flex-col items-center">
