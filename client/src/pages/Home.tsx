@@ -110,7 +110,7 @@ export default function Home() {
               Aquí solo ajustas el margen específico para esta pantalla.
               Si en el futuro lo usas en el footer, le pasas otro margen y listo.
           */}
-          <FloralSeparator className="-mt-4 md:-mt-8" />
+          <FloralSeparator className="-mt-4 md:-mt-8 mt-5" />
 
 
         </div>
@@ -128,11 +128,6 @@ export default function Home() {
         md:mt-20   /* Notebook: MUCHO más aire para elegancia */
         delay-2000
         ">
-                {/* REPRODUCTOR DE MÚSICA */}
-        <div className="w-full max-w-xs md:max-w-md transition-all duration-300 mt-5"> 
-            {/* ^^^ En notebook (md) lo dejamos crecer a 'max-w-md' para que no se vea enano */}
-            <MusicPlayer />
-        </div>
 
         {/* Contenedor Principal: Siempre centrado, nunca en columnas laterales */}
         <div className="space-y-8 w-full max-w-lg md:max-w-2xl mx-auto z-10 flex flex-col items-center">
@@ -223,6 +218,7 @@ export default function Home() {
       {/* Itinerario */}
       <div className="relative">
         <h2 className="text-4xl font-serif text-center mb-12 mt-5">Itinerario</h2>
+        <h5 className="text-center text-muted-foreground mb-8">ARREGLAR ITINERARIOooooooooo</h5>
         <Timeline events={timelineEvents} />
         <div className="flex flex-col items-center justify-center w-full relative z-10 mt-10 md:mt-0">
           <FloralSeparator className="-mt-4 md:-mt-8" />
@@ -275,7 +271,7 @@ export default function Home() {
           <img src="/images/vestuario.webp" alt="Dress Code" className="w-[30%] h-auto" />
         </div>
         <p className="text-lg text-muted-foreground">
-          Se reserva el celeste pastel para el novio y blanco para la novia. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
+          Se reserva el blanco para la novia. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
         </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
 

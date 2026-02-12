@@ -32,11 +32,11 @@ export default function Sobre() {
 
             {/* --- CAPA 2: CONTENIDO PRINCIPAL (Flex) --- */}
             {/* Este div ocupa toda la pantalla y centra el contenido ENCIMA de las flores */}
-            <div className="relative z-10 min-h-screen flex flex-col items-center justify-start p-4 pb-20"> 
-                {/* pb-20 (Padding Bottom) extra para que el texto no choque con las flores del fondo */}
+            <div className="relative z-10 min-h-screen flex flex-col items-center justify-starts gap-8 p-1 pb-24 pt-12"> 
 
                 {/* 1. TEXTO SUPERIOR */}
-                <div className="text-center space-y-2 mb-6 animate-in fade-in slide-in-from-top-8 duration-1000 delay-200 fill-mode-forwards">
+                {/* Quitamos el mb-6 porque el gap-8 del padre ya separa los elementos */}
+                <div className="text-center space-y-2 animate-in fade-in slide-in-from-top-8 duration-1000 delay-200 fill-mode-forwards">
                     <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-widest uppercase">
                         Tienes una
                     </p>
@@ -47,7 +47,6 @@ export default function Sobre() {
                     <h1 className="text-2xl md:text-4xl font-script text-foreground drop-shadow-sm">
                         Carla Pizarro & Nicolás Lagos
                     </h1>
-                    
                 </div>
 
                 {/* 2. EL SOBRE */}
@@ -70,8 +69,8 @@ export default function Sobre() {
                 </div>
 
                 {/* 3. TEXTO INFERIOR */}
-                {/* Quité el 'mb-8' que tenías, porque empujaba todo hacia arriba innecesariamente */}
-                <div className="mt-6 text-center space-y-2 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
+                {/* Quitamos mt-6 para que esté más pegado al sobre (controlado por el gap) */}
+                <div className="text-center space-y-2 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
                     <p className="text-sm md:text-base text-muted-foreground/80 pt-2 animate-pulse">
                         (Toca el sobre para abrir)
                     </p>
