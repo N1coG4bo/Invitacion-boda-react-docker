@@ -68,13 +68,13 @@ export function MusicPlayer() {
   };
 
   return (
-      <div className="w-full max-w-[300px] mx-auto bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-primary/10">
+      <div className="w-[60%] max-w-[250px] mx-auto bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-primary/10">
       {/* CAMBIOS REALIZADOS:
       1. max-w-md -> max-w-[300px]: Lo hace mucho más angosto.
       2. p-6 -> p-4: Reduje el relleno interno para que no se vea desproporcionado.
       */}
             {/* Texto más pequeño */}
-            <h3 className="text-center font-bold text-xs mb-2 text-primary/80">
+            <h3 className="text-center font-bold text-xs mb-2 text-foreground/80">
                 ¡DALE PLAY A NUESTRA CANCIÓN!
             </h3>
             

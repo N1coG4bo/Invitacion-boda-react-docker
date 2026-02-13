@@ -28,13 +28,12 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 
-function App() {
-  // 2. Obtenemos la ruta actual
-  const [location] = useLocation();
 
-  // 3. Lógica para decidir si mostrar el reproductor
-  // Solo lo mostramos si la ruta es exactamente "/" (el sobre)
-  // Nota: Si quieres que se oculte en TODAS menos el sobre, esta lógica es perfecta.
+
+
+
+function App() {
+  const [location] = useLocation();
   const isPlayerVisible = location === "/";
 
   return (
@@ -42,24 +41,33 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          
-          {/* 4. REPRODUCTOR GLOBAL "FANTASMA"
-             - Siempre está montado (por eso la música no se corta).
-             - Usamos clases dinámicas para mostrarlo u ocultarlo visualmente.
-             - hidden: Oculta el elemento (display: none), pero no lo destruye.
-             - flex: Lo muestra (y permite centrarlo).
+
+          {/* CAMBIO CLAVE 1: min-h-[100dvh]
+            Esto asegura que en celulares la altura sea real, descontando la barra de navegación.
           */}
-          <div 
-            className={`
-              w-[90%] fixed bottom-4 left-1/2 -translate-x-1/2 z-50 
-              transition-opacity duration-500
-              ${isPlayerVisible ? "flex opacity-100 pointer-events-auto" : "hidden opacity-0 pointer-events-none"}
-            `}
-          >
-            <MusicPlayer />
+          <div className="min-h-[100dvh] flex flex-col relative bg-background">
+            
+            {/* CAMBIO CLAVE 2: flex-1
+               Este contenedor crecerá todo lo que pueda, empujando el reproductor hacia abajo
+               si hay espacio vacío.
+            */}
+            <main className="flex-1 w-full flex flex-col">
+              <Router />
+            </main>
+
+            {/* REPRODUCTOR (Footer) */}
+            <div 
+              className={`
+                w-full flex justify-center py-6 z-50 shrink-0
+                transition-all duration-500
+                ${isPlayerVisible ? "block opacity-100" : "hidden opacity-0"}
+              `}
+            >
+               <MusicPlayer />
+            </div>
+
           </div>
 
-          <Router />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

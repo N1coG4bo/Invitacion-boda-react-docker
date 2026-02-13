@@ -13,29 +13,20 @@ export default function Sobre() {
     };
 
     return (
+        /* CAMBIO CLAVE:
+           - Quitamos 'min-h-screen'.
+           - Ponemos 'h-full flex-grow'. 
+           - Esto hace que 'Sobre' llene el espacio disponible que le deja App.tsx.
+        */
+        <div className="w-full h-full flex-grow flex flex-col relative overflow-hidden">
 
-
-        // CONTENEDOR PRINCIPAL
-        // Añadimos 'overflow-hidden' para que si las flores son muy grandes no generen scroll
-        <div className="min-h-screen bg-background overflow-hidden relative w-full h-full">
-
-            {/* --- CAPA 1: DECORACIÓN (Absolute) --- */}
-            {/* Las sacamos del flujo flex. Así siempre estarán "en su sitio" sin depender del texto */}
-            
-            {/* Ejemplo: Flores arriba (Opcional, si usas FloralSectionTop) */}
-            {/* <div className="absolute top-0 left-0 w-full z-0 pointer-events-none">
-                <FloralSectionTop />
-            </div> */}
-
-
-
-
-            {/* --- CAPA 2: CONTENIDO PRINCIPAL (Flex) --- */}
-            {/* Este div ocupa toda la pantalla y centra el contenido ENCIMA de las flores */}
-            <div className="relative z-10 min-h-screen flex flex-col items-center justify-starts gap-8 p-1 pb-24 pt-12"> 
+            {/* CONTENIDO CENTRADO
+               - my-auto: Intenta centrar el bloque verticalmente si sobra espacio.
+               - py-8: Un padding seguro para arriba y abajo.
+            */}
+            <div className="relative z-10 w-full flex flex-col items-center justify-center gap-8 p-4 py-8 my-auto"> 
 
                 {/* 1. TEXTO SUPERIOR */}
-                {/* Quitamos el mb-6 porque el gap-8 del padre ya separa los elementos */}
                 <div className="text-center space-y-2 animate-in fade-in slide-in-from-top-8 duration-1000 delay-200 fill-mode-forwards">
                     <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-widest uppercase">
                         Tienes una
@@ -43,15 +34,14 @@ export default function Sobre() {
                     <h1 className="text-4xl md:text-6xl font-script text-foreground drop-shadow-sm">
                         Invitación Especial
                     </h1>
-
                     <h1 className="text-2xl md:text-4xl font-script text-foreground drop-shadow-sm">
                         Carla Pizarro & Nicolás Lagos
                     </h1>
                 </div>
 
-                {/* 2. EL SOBRE */}
+                {/* 2. EL SOBRE (Hacemos la imagen responsiva con max-h) */}
                 <div 
-                    className="relative w-full max-w-[500px] flex justify-center cursor-pointer group" 
+                    className="relative w-full flex justify-center cursor-pointer group px-4" 
                     onClick={abrirInvitacion}
                 >
                     <img
@@ -60,7 +50,10 @@ export default function Sobre() {
                         loading="eager"
                         fetchPriority="high"
                         className="
-                        relative z-20 w-full object-contain drop-shadow-2xl
+                        relative z-20 
+                        w-full max-w-[400px] 
+                        md:max-w-[500px]
+                        object-contain drop-shadow-2xl
                         animate-in fade-in slide-in-from-bottom-24 duration-[2000ms] ease-out
                         transition-transform duration-500 ease-in-out
                         group-hover:-translate-y-4 group-hover:scale-105
@@ -69,15 +62,14 @@ export default function Sobre() {
                 </div>
 
                 {/* 3. TEXTO INFERIOR */}
-                {/* Quitamos mt-6 para que esté más pegado al sobre (controlado por el gap) */}
                 <div className="text-center space-y-2 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
-                    <p className="text-sm md:text-base text-muted-foreground/80 pt-2 animate-pulse">
+                    <p className="text-sm md:text-base text-muted-foreground/80 animate-pulse">
                         (Toca el sobre para abrir)
                     </p>
                 </div>
 
             </div>
+
         </div>
-       
     );
 }
