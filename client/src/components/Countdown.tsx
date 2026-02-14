@@ -55,7 +55,7 @@ export function Countdown({ targetDate }: CountdownProps) {
   );
 
   return (
-    <div className="flex justify-center items-center py-8 animate-in fade-in zoom-in duration-1000">
+    <div className="flex justify-center items-center py-8 animate-in fade-in zoom-in duration-1000 notranslate">
       <TimeUnit value={timeLeft.days} label="Días" />
       <span className="text-2xl md:text-4xl font-serif text-muted-foreground -mt-6">:</span>
       <TimeUnit value={timeLeft.hours} label="Hs" />

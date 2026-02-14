@@ -18,7 +18,7 @@ export default function Sobre() {
            - Ponemos 'h-full flex-grow'. 
            - Esto hace que 'Sobre' llene el espacio disponible que le deja App.tsx.
         */
-        <div className="w-full h-full flex-grow flex flex-col relative overflow-hidden">
+        <div className="w-full h-full flex-grow flex flex-col relative overflow-hidden bg-black-background">
 
             {/* CONTENIDO CENTRADO
                - my-auto: Intenta centrar el bloque verticalmente si sobra espacio.
@@ -45,7 +45,7 @@ export default function Sobre() {
                     onClick={abrirInvitacion}
                 >
                     <img
-                        src="/images/sobre.png"
+                        src="/images/sobre.webp"
                         alt="Sobre Invitación"
                         loading="eager"
                         fetchPriority="high"

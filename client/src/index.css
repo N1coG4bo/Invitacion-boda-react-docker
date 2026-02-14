@@ -43,6 +43,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-foreground2: var(--foreground2);
+  --color-black-background: var(--black-background);
 }
 
 :root {
@@ -51,6 +52,10 @@
   /* Color de fondo principal de toda la página. */
   --background: #bd553b; /* Terracota */
   
+
+  /* black bakground*/
+  --black-background: #000000;
+
   /* Color de texto principal (primer plano). */
   --foreground: #FEF4D9; /* Blanco Hueso */
 
@@ -122,7 +127,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-black-background text-foreground font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-bold;

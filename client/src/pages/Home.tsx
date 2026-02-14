@@ -271,7 +271,7 @@ export default function Home() {
           <img src="/images/vestuario.webp" alt="Dress Code" className="w-[30%] h-auto" />
         </div>
         <p className="text-lg text-muted-foreground">
-          Se reserva el blanco para la novia. Invitamos a los caballeros a usar traje y corbata, y a las damas a optar por vestidos largos o de cóctel, acorde a la ocasión.
+          Se reserva el blanco para la novia. Invitamos a los caballeros y a las damas a usar ropa formal y recordamos que al final habrá una fiesta para que consideres tú comodidad.
         </p>
         <FloralSeparator className="-mt-4 md:-mt-8" />
 
@@ -355,7 +355,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 text-center text-muted-foreground text-sm">
-        <p className="font-serif italic">Con amor, Nicolás & Carli</p>
+        <p className="font-serif italic">Con amor, Carli & Nicolás</p>
         <p className="mt-2 text-xs opacity-50">29 . 05 . 2026</p>
       </footer>
     </div>
