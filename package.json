@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "start": "NODE_ENV=production node dist/index.js",
-    "preview": "vite preview --host",
-    "check": "tsc --noEmit",
-    "format": "prettier --write ."
-  },
+"scripts": {
+  "dev": "vite --host",
+  "build:client": "vite build",
+  "build:server": "vite build --ssr src/entry-server.tsx --outDir ../dist/server",
+  "build:prerender": "node prerender.js",
+  "build": "pnpm build:client && pnpm build:server && pnpm build:prerender",
+  "start": "npx serve dist/public",
+  "preview": "vite preview --host",
+  "check": "tsc --noEmit",
+  "format": "prettier --write ."
+},
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
